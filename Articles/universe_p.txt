@@ -1,0 +1,37 @@
+[{
+    "type":1,
+    "push":"推",
+    "ID":"pi314",
+    "date":"201209??????",
+    "content":"增加 Esc 按鍵，用來停止增加星星"
+},{
+    "type":1,
+    "push":"推",
+    "ID":"pi314",
+    "date":"20120917????",
+    "content":"修改 pie 生成演算法，使星星分佈均勻"
+},{
+    "type":1,
+    "push":"推",
+    "ID":"pi314",
+    "date":"20120918????",
+    "content":"增加 ~ 按鍵：直接消至三個星星"
+},{
+    "type":1,
+    "push":"推",
+    "ID":"pi314",
+    "date":"20120925????",
+    "content":"修改 ball 為 sphere"
+},{
+    "type":0,
+    "push":"→",
+    "ID":"pi314",
+    "date":"20120925????",
+    "content":"修改 radiation 為 2sphere"
+},{
+    "type":0,
+    "push":"→",
+    "ID":"pi314",
+    "date":"20120925????",
+    "content":"顯示形狀表"
+}]

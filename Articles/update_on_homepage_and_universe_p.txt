@@ -1,0 +1,14 @@
+[{
+    "type":1,
+    "push":"推",
+    "ID":"pi314",
+    "date":"201401241525",
+    "content":"[首頁] 把 KeyManager 升級到 beta10"
+},{
+    "type":1,
+    "push":"推",
+    "ID":"pi314",
+    "date":"201401241526",
+    "content":"[Universe] 做了小調整, 使滑鼠滾輪的 scaling 順暢"
+}
+]

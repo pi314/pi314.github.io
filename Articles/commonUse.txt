@@ -1,0 +1,15 @@
+這篇不是我的作品
+而是別人的作品:D
+
+有些常用的工具
+別的電腦上沒有
+每次在外面需要用到
+都得自己再去重找一次
+
+就整理在這裡好了XD
+
+<a href="./Other/pietty0327.exe">pietty0327</a>
+<a href="http://boshiamy.com/hliu.html">網．蝦米</a>
+https://raw.github.com/pi314/rcfiles/master/.tcshrc
+https://raw.github.com/pi314/rcfiles/master/.vimrc
+https://raw.github.com/pi314/rcfiles/master/.screenrc

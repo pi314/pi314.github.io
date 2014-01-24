@@ -1,0 +1,229 @@
+20131012
+==========
+.   修改 bookmark 機制，提早 load 文章，並在 load 好後把 bookmark 清掉，以免再度進入文章
+    修正: 由 bookmark 網址進入文章，不會設定已讀
+
+.   實作 click 周圍區域回到文章列表
+
+.   實作滑鼠滾輪瀏覽文章內容，文章列表不支援
+
+.   修改 KeyManager，加上 scroll_down 和 scroll_up 功能
+    修改版本號為 beta7
+
+.   整理 Articles/ 內容
+
+.   修正自動辨認超連結的 bug，會把 http 前的字元吃掉一個
+
+.   準備正式上架
+
+20131011
+==========
+.   實作 hover 選取, 點擊進入文章
+
+.   click 周圍區域離開文章的功能待實作
+    目前發現 bind 在 html 和 body 上都會使全畫面接收到 click event
+
+.   待實作功能
+    .   整理 Articles/ 內容
+        .   文章 root 變數改成 {{ root }}
+    .   滑鼠瀏覽
+        .   滾輪
+        .   click 周圍區域回到文章列表
+
+20131007
+==========
+.   實作 [List] SPACE(PGDN), PGUP
+
+.   實作 [Article] SPACE(PGDN), PGUP
+
+.   實作 anchor
+
+.   待實作功能
+    .   整理 Articles/ 內容
+        .   文章 root 變數改成 {{ root }}
+    .   滑鼠瀏覽
+
+20131005
+==========
+.   實作已讀標題顏色改變
+    .   實作同標題文章目跳躍 [ ]
+
+.   [idea] 開/關燈可以利用 "css 定義順序會決定優先度" 來做到
+
+.   實作開/關燈
+
+.   修改超連結樣式為橘色
+
+.   修改色碼 close 為 </>
+
+.   實作推文
+
+.   增加 set_article_content 防呆
+
+.   修改 displayer_module: set_end
+    修改版本號為 beta3
+
+.   實作以 '>' 字元開頭的行，整行顏色會變成 cb
+
+.   實作自動辨認超連結
+
+.   待實作功能
+    .   各按鍵，之後再整理
+    .   整理 Articles/ 內容
+        .   文章 root 變數改成 {{ root }}
+
+20131004
+==========
+.   實作亮暗色碼
+
+.   實作文章列表換頁
+
+20131003
+==========
+.   發現 KeyManager 有 bug，在某些狀況下會找不到 namespace，導致抓不到 table
+    解決：原來是 DEFAULT 這個 namespace 沒有先被初始化
+    修改 DEFAULT 為 __DEFAULT__
+
+.   待實作功能
+    .   亮暗色碼
+    .   已讀標題顏色改變
+        .   在同標題文章間跳躍 [ ]
+    .   各按鍵，之後再整理
+    .   文章 root 變數改成 {{ root }}
+    .   自動辨認超連結
+    .   文章列表一次翻一頁
+    .   整理 Articles/ 內容
+    .   簽名檔
+    .   推文
+
+20130931
+==========
+.   s/<bo>/<span class="fb bo">/g
+    s/</bo>/</span>/g
+    這樣也許可以解決 nested html tag 的問題，雖然這不是重要的問題
+    更重要的是這樣的 regexp 比較簡單
+    試著不要用 loop iterate 所有種類的 tag，試著用 regex 抓出 tag，並取代成對應的 span
+    待測試
+
+.   測試發現，抓出來的 tag 需用 $n 表示，而這個 $n 不能被當成 hash 的 key
+    於是用
+    str = str.replace(/<(.)(.)>/g, '<span class="f$1 b$2">');
+    str = str.replace(/<\/(..)?>/g, '</span>');
+    解決，效能比用 loop iterate 所有 tag 還高許多
+
+.   待實作功能
+    .   亮暗色碼
+    .   已讀標題顏色改變
+        .   在同標題文章間跳躍
+    .   各按鍵，之後再整理
+    .   文章 root 變數改成 {{ root }}
+    .   自動辨認超連結
+    .   文章列表一次翻一頁
+    .   整理 Articles/ 內容
+    .   簽名檔
+    .   推文
+
+
+20130930
+==========
+.   色碼格式
+    <AB>
+    A 為前景
+    B 為背景
+    大寫為亮色，小寫為普通
+    Blink 效果先不考慮
+    
+.   色碼用 javascript 取代，原文章裡的色碼 tag 取代成 <span class="">...</span>
+    試著不要用 loop iterate 所有種類的 tag，試著用 regex 抓出 tag，並取代成對應的 span
+
+20130926
+==========
+.   使用 namespace 重寫完成
+
+.   修改一些文章，把一些 ^M 去除
+
+.   已讀 like 完成
+
+.   待實作功能
+    .   色碼
+    .   已讀標題顏色改變
+        .   在同標題文章間跳躍
+    .   各按鍵，之後再整理
+    .   文章 root 變數改成 {{ root }}
+    .   自動辨認超連結
+    .   文章列表一次翻一頁
+    .   整理 Articles/ 內容
+    .   簽名檔
+    .   推文
+
+20130925
+==========
+.   一開始讓推文數字是 ?，等到抓到推文檔後才改為數字或空白
+
+.   KeyManager 需修改，需增加 namespace，並有對應的 method 來切換 namespace
+
+.   body 增加 overflow:hidden 屬性，使捲動條隱藏
+
+.   待實作功能
+    .   修改 KeyManager 後用 namespace 綁定按鍵
+    .   色碼
+    .   已讀
+        .   like 字串改變
+        .   標題顏色改變
+    .   各按鍵，之後再整理
+
+.   KeyManager namespace 更新完成，更新為 pi314-beta5-keymanager.js
+
+20130924
+==========
+.   實作文章標頭
+
+.   實作文章列表 k j ENTER HOME END 鍵
+
+.   實作文章 k j q HOME END 鍵
+
+.   實作日期顏色
+
+20130923
+==========
+.   修正 article_widget.css，使文章編號 text-align:right，且左方多出 padding
+
+.   實作 ajax 抓文章功能，從置底的文章優先抓取，放在 article_content array 中
+    每抓一篇文章就檢查是否有推文檔，若有則抓取，然後計算推文數量並顯示
+
+.   把文章列表相關操作從 _utils.js 移到 _articles_list.js
+
+.   新增 _article_content.js，注意 article 是單數
+
+.   待實作日期顏色
+
+.   新增 article_content.css，待增加相關 css 屬性
+
+.   實作 文章列表 及 文章內容 兩獨立頁面
+
+20130922
+==========
+.   [idea] 推文數需等推文檔用 ajax 抓到後才能得知
+
+.   [idea] 文章用 ajax 抓取，由最新的文章和置底的文章優先
+
+20130913
+==========
+.   文章物件屬性
+    .   日期, 星期, 時間
+    .   簽名檔
+    .   m
+    .   title
+    .   檔名
+
+.   實作 get_visible_lines()，取得畫面大小。
+
+20130910
+==========
+.   已經實作好 displayer module
+
+.   還需做好 expand.py
+
+.   預計新首頁會有兩個頁面，一個是文章列表，另一個是文章內容
+    兩個頁面都用 displayer module 控制
+    所有內容則用 expand.py 放在 main.js 中，不再用 ajax 取得

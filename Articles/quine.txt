@@ -1,0 +1,37 @@
+最近迷上了一個東西：quine
+
+在計算機科學裡面, 這個字的意思是「自產生程式」
+(不過字典裡沒有這個字就是了
+
+自產生程式有一些要求
+
+1.  不可以取得任何輸入, 包括鍵盤和檔案.
+2.  唯一的輸出結果就是自己的程式碼.
+
+--
+自產生程式是很違反直覺的, 這也是它的迷人之處.
+
+如果想印出 a
+在 C 裡面就得寫 printf("a");
+
+但是如果想印出 printf("a");
+就得寫 printf("printf(\"a\")");
+
+但是如果想印出 printf("printf(\"a\")");
+就得寫...咦?
+
+--
+因為真的很好玩, 所以我也寫了幾支,
+
+<a href="./Game/quine/quine.c">C 語言</a>
+<a href="./Game/quine/quine.py">Python 語言</a>
+<a href="./Game/quine/quine2.py">Python 語言 (另一解)</a>
+<a href="./Game/quine/quine.sh">Shell Script</a>
+<a href="./Game/quine/polyglot_quine.c">C 和 Python 的 quine</a>
+<a href="./Game/quine/relay_quine.cpp">C++ 和 Python 的 quine</a>
+
+當然過程中有看提示, 我沒那麼厲害可以自己想出來.
+
+--
+想看提示的話, 這裡有個 wiki 頁面
+http://en.wikipedia.org/wiki/Quine_(computing)

@@ -1,0 +1,28 @@
+據說 Windows 裡面有內建一個功能
+可以用鍵盤控制滑鼠
+
+不過不知道為什麼我的電腦找不到
+而且那個功能得用大鍵盤才行
+我這台是 13.3 吋的筆電
+
+所以就自己寫了一個:D
+
+為什麼我會需要這個功能呢?
+因為個人體質  手很容易出汗
+常常需要在鍵盤上蓋布才可以打字
+也因為這樣  觸控板用起來也會很不舒服
+
+就像以往
+使用的是 Windows API
+效果並不好
+不過就個人而言還堪用啦
+
+控制的按鍵根據用途配了兩組
+一個是平時用的  速度比較快
+下載：<a href="./Game/MouseBoard/mouseBoard_v1.1.exe">mouseBoard_v1.1</a>
+
+另一個則是玩 Minecraft 時用的(掩面
+下載：<a href="./Game/MouseBoard/mouseBoard_minecraft_0.2.exe">mouseBoard_minecraft_0.2</a>
+
+ ----
+因為討厭手汗 所以也討厭天氣熱 ~"~
