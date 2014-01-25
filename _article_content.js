@@ -62,6 +62,7 @@ var back_to_list = function () {
     $('#articles_list').css('display', 'block');
     $('#article_content').css('display', 'none');
     KeyManager.namespace('LIST');
+    state = 'LIST';
     window.location.hash = '#list';
     coloring();
 }

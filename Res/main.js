@@ -53,7 +53,11 @@ var mouse_bindings = function () {
 
     $('body').click(function () {
         if (!inrange) {
-            back_to_list();
+            if (state == 'LIST') {
+                enter_article();
+            } else {
+                back_to_list();
+            }
         }
     });
 };
@@ -355,6 +359,7 @@ var back_to_list = function () {
     $('#articles_list').css('display', 'block');
     $('#article_content').css('display', 'none');
     KeyManager.namespace('LIST');
+    state = 'LIST';
     window.location.hash = '#list';
     coloring();
 }
