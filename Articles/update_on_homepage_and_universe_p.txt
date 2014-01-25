@@ -10,5 +10,11 @@
     "ID":"pi314",
     "date":"201401241526",
     "content":"[Universe] 做了小調整, 使滑鼠滾輪的 scaling 順暢"
+},{
+    "type":1,
+    "push":"推",
+    "ID":"pi314",
+    "date":"201401251142",
+    "content":"[Universe] 放到 github 上~"
 }
 ]
