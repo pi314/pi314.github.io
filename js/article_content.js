@@ -10,9 +10,9 @@ var enter_article = function () {
             uncoloring();
         }
     } else {
-        console.log(eq_index);
-        console.log(articles_content[eq_index]);
-        console.log(push_content[eq_index]);
+        console.log('[enter_article] not found', eq_index);
+        console.log('[enter_article] not found', articles_content[eq_index]);
+        console.log('[enter_article] not found', push_content[eq_index]);
     }
 };
 
@@ -53,7 +53,6 @@ var set_bookmark = function (index) {
 };
 
 var goto_bookmark = function () {
-    KeyManager.namespace('ARTICLE');
     goto_article_by_index(bookmark_index);
     bookmark_index = -1;
 };

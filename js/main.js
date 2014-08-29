@@ -143,14 +143,15 @@ $(function () {
 
     KeyManager.namespace('LIST');
 
-    //bookmark_index = -1;
-
-    if (window.location.hash != '') {
-        console.log('found bookmark!');
+    if (window.location.hash != '' && window.location.hash != '#list') {
+        KeyManager.namespace('ARTICLE');
+        console.log('found bookmark: ', window.location.hash);
+        state = 'ARTICLE';
         for (var a = 0; a < articles_list.length; a++) {
             if ('#' + articles_list[a].file == window.location.hash) {
                 set_bookmark(a);
                 get_article_content(a);
+                enter_article(a);
                 break;
             }
         }
