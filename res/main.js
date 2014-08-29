@@ -1,15 +1,10 @@
 $(function () {
-#_utils.js
-#_articles_list.js
-#_article_content.js
 
     var visible_lines = get_visible_lines();
-#_articles.list
-#_signatures.list
-    var articles_content = [];
-    var push_content = [];
+    articles_content = [];
+    push_content = [];
 
-    var list_displayer = new Displayer('article_widget');
+    list_displayer = new Displayer('article_widget');
     var article_menu_panel = gen_article_menu_panel();
 
     list_displayer.adopt( $('#articles') );
@@ -19,17 +14,17 @@ $(function () {
 
     get_article_content(articles_list.length - 1);
 
-    var content_displayer = new Displayer('content');
+    content_displayer = new Displayer('content');
     content_displayer.adopt( $('#article_content') );
     content_displayer.set_range(visible_lines);
 
-    var focus_index = get_newest();
+    focus_index = get_newest();
     var readed_article_title = '';
     console.log('focus_index', focus_index);
     $('#article_widget_'+focus_index).addClass('focused');
 
-    var state = 'LIST';
-    var color_state = 'NORMAL';
+    state = 'LIST';
+    color_state = 'NORMAL';
 
     KeyManager.namespace('LIST');
     KeyManager.keydown(['ENTER', 'RIGHT'], function () {
@@ -139,7 +134,7 @@ $(function () {
 
     KeyManager.namespace('LIST');
 
-    var bookmark_index = -1;
+    bookmark_index = -1;
 
     if (window.location.hash != '') {
         console.log('found bookmark!');
