@@ -1,0 +1,52 @@
+html, body {
+    background:black;
+    color:white;
+    font-size:25px;
+    font-family:consolas;
+    overflow:hidden;
+    margin:0px;
+}
+
+.line {
+    font-size:25px;
+}
+
+.container {
+    font-size:0px;
+}
+
+.text_block {
+    font-size:25px;
+}
+
+#wrapper {
+    max-width:1024px;
+    margin:8px auto;
+}
+
+.text_block {
+    display:inline-block;
+}
+
+#board_master {
+    float:left;
+    background:lightgray;
+    color:black;
+}
+
+#board_title {
+    display:block;
+    background:#007f7f;
+    color:yellow;
+    text-align:center;
+}
+
+#board_name {
+    float:right;
+    background:lightgray;
+    color:black;
+}
+
+#operations {
+    color:gray;
+}

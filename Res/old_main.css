@@ -1,0 +1,140 @@
+* {
+    margin:0px;
+    border:0px;
+    padding:0px;
+    font-size:30px;
+    line-height:34px;
+    font-family:consolas;
+    cursor:default;
+}
+body {
+    background:black;
+}
+#wrapper {
+    margin:auto;
+    width:1000px;
+}
+.line {
+    color:lightgray;
+    height:32px;
+    z-index:-1;
+}
+.line div {
+    font-size:30px;
+    line-height:30px;
+    height:32px;
+}
+.cell {
+    display:table-cell;
+}
+.selLine {
+    background:purple;
+}
+#boardHead {
+    background:lightgray;
+    color:black;
+}
+#boardComment {
+    text-align:center;
+    background:rgb(0, 127, 127);
+    color:yellow;
+    height:32px;
+}
+#control {
+    color:gray;
+}
+#mean {
+    background:lightgray;
+    color:black;
+}
+.seqNum {
+    width:70px;
+    text-align:right;
+}
+.baseSeq {
+    color:yellow;
+}
+.like {
+    color:cyan;
+}
+.likecell {
+    width:45px;
+    display:table-cell;
+    text-align:center;
+}
+.pushNum {
+    width:40px;
+    color:yellow;
+    text-align:right;
+    padding-right:15px;
+}
+.date {
+    width:80px;
+    text-align:center;
+}
+.author {
+    padding-left:15px;
+    width:150px;
+}
+#titleTitle {   
+    width:320px;
+}
+.square {
+    width:40px;
+    text-align:left;
+}
+#response {
+    padding-right:30px;
+}
+#popular {
+    width:76px;
+}
+
+#list {
+    display:block;
+}
+#base {
+    display:block;
+}
+#article {
+    display:block;
+}
+
+.articleItem {
+    width:90px;
+    background:lightgray;
+    color:navy;
+    text-align:center;
+}
+.articleHeader {
+    padding-left:15px;
+    padding-right:15px;
+    background:navy;
+    color:lightgray;
+}
+#content {
+    color:lightgray;
+    white-space:pre;
+}
+a {
+    color:orange;
+}
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:underline;}
+
+.pushChar {
+    width:45px;
+    float:left;
+    text-align:center;
+}
+.pushID {
+    float:left;
+}
+.pupshContent {
+    width:100px;
+}
+.pushDate {
+    float:right;
+}

@@ -1,0 +1,50 @@
+#article_content {
+    /* display:none; */
+}
+
+.content {
+    white-space:pre;
+    word-break:break-all;
+    color:lightgray;
+}
+
+#content_0, #content_1, #content_2 {
+    background:navy;
+    color:lightgray;
+}
+
+.item_name {
+    width:80px;
+    text-align:center;
+    background:lightgray;
+    color:navy;
+}
+
+.item_content {
+    background:navy;
+    color:lightgray;
+    padding:0px 20px;
+}
+
+.board_name {
+    float:right;
+}
+
+a {
+    color:orange;
+    text-decoration:none;
+}
+
+.content > .push {
+    width:30px;
+    float:left;
+    text-align:center;
+}
+
+.content > .ID {
+    float:left;
+}
+
+.content > .date {
+    float:right;
+}
