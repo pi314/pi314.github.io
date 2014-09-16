@@ -1,0 +1,59 @@
+/*
+Black
+Red
+Green
+Yellow
+Navy
+Purple
+Cyan
+White
+Orange
+*/
+
+/* foreground */
+.fb { color:rgb(  0,   0,   0); }
+.fr { color:rgb(127,   0,   0); }
+.fg { color:rgb(  0, 127,   0); }
+.fy { color:rgb(127, 127,   0); }
+.fn { color:rgb(  0,   0, 127); } 
+.fp { color:rgb(127,   0, 127); }
+.fc { color:rgb(  0, 127, 127); }
+.fw { color:lightgray; }
+.fo { color:rgb(127,  64,   0); }
+
+.fB { color:gray; }
+.fR { color:red; }
+.fG { color:lime; }
+.fY { color:yellow; }
+.fN { color:blue; } 
+.fP { color:magenta; }
+.fC { color:cyan; }
+.fW { color:white; }
+.fO { color:orange; }
+
+
+/* background */
+.bb { background:rgb(  0,   0,   0); }
+.br { background:rgb(127,   0,   0); }
+.bg { background:rgb(  0, 127,   0); }
+.by { background:rgb(127, 127,   0); }
+.bn { background:rgb(  0,   0, 127); } 
+.bp { background:rgb(127,   0, 127); }
+.bc { background:rgb(  0, 127, 127); }
+.bw { background:rgb(127, 127, 127); }
+.bo { background:rgb(127,  64,   0); }
+
+.bB { background:black; }
+.bR { background:red; }
+.bG { background:lime; }
+.bY { background:yellow; }
+.bN { background:blue; }
+.bP { background:magenta; }
+.bC { background:cyan; }
+.bW { background:white; }
+.bO { background:orange; }
+
+.plain {
+    color:lightgray;
+    background:black;
+}

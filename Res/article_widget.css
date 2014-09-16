@@ -1,0 +1,67 @@
+.article_widget {
+    color:lightgray;
+}
+
+.article_widget > .list_number {
+    text-align:right;
+    padding-left:10px;
+    padding-right:20px;
+    width:60px;
+}
+
+.article_widget > .base {
+    color:yellow;
+}
+
+.article_widget > .like {
+    width:35px;
+}
+
+.article_widget > .B {
+    color:cyan;
+}
+
+.article_widget > .M {
+    color:cyan;
+}
+
+.article_widget > .pushes {
+    width:35px;
+}
+
+.article_widget > .pos_push {
+    color:yellow;
+}
+
+.article_widget > .no_push {
+    color:yellow;
+}
+
+.article_widget > .neg_push {
+    color:gray;
+}
+
+.article_widget > .date {
+    width:85px;
+}
+
+.article_widget > .author {
+    width:120px;
+}
+
+.article_widget > .article_title {
+}
+
+.article_widget > .re {
+    width:45px;
+}
+
+.focused {
+    color:lightgray;
+    background:purple;
+}
+
+#article_format {
+    color:black;
+    background:lightgray;
+}
