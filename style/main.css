@@ -2,7 +2,7 @@ html, body {
     background:black;
     color:white;
     font-size:25px;
-    font-family:consolas;
+    font-family:consolas, monaco;
     overflow:hidden;
     margin:0px;
 }
