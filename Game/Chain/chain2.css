@@ -1,0 +1,93 @@
+* {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#wrapper {
+    position: relative;
+    background: rgb(255, 255, 200);
+}
+
+.key-icon {
+    position: fixed;
+    height: 50px;
+    background: lightgray;
+    border-radius: 10px;
+    color: rgb(255, 255, 200);
+    font-family: consolas, monaco, monospace;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.key-icon:hover {
+    background: gray;
+}
+
+#up-key {
+    top: 250px;
+    left: 420px;
+    width: 50px;
+}
+
+#left-key {
+    top: 310px;
+    left: 360px;
+    width: 50px;
+}
+
+#right-key {
+    top: 310px;
+    left: 480px;
+    width: 50px;
+}
+
+#down-key {
+    top: 310px;
+    left: 420px;
+    width: 50px;
+}
+
+#pgup-key {
+    top: 250px;
+    left: 540px;
+    width: 100px;
+}
+
+#pgdn-key {
+    top: 310px;
+    left: 540px;
+    width: 100px;
+}
+
+#amount {
+    top: 250px;
+    left: 650px;
+    width: 100px;
+}
+
+.ball {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: lightgreen;
+    z-index: 1;
+}
+
+#head {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: lightblue;
+    z-index: 2;
+    cursor: pointer;
+}
+
