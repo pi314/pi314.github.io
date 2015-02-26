@@ -21,3 +21,10 @@ body {
     margin: 8px auto;
 }
 
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}

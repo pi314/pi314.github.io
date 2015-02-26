@@ -1,0 +1,15 @@
+#article-content-panel {
+}
+
+#article-content-panel > div > .line > .text-block {
+    color: lightgray;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
