@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>作品集</title>
-        <link rel="shortcut icon" href="Res/logo.png" type="image/vnd.microsoft.icon">
-        <link type="text/css" href="./style/main.css" rel="stylesheet"/>
-        <link type="text/css" href="./style/article_widget.css" rel="stylesheet"/>
-        <link type="text/css" href="./style/article_content.css" rel="stylesheet"/>
-        <link type="text/css" href="./style/color.css" rel="stylesheet"/>
-        <script src="./js/jquery-latest.js"></script>
-        <script src="./js/displayer-beta3.js"></script>
-        <script src="./js/KeyManager/pi314-keymanager.js"></script>
-        <script src="./js/utils.js"></script>
-        <script src="./js/signature_list.js"></script>
-        <script src="./js/articles_list.js"></script>
-        <script src="./js/article_content.js"></script>
-        <script src="./js/main.js"></script>
-    </head>
-    <body>
-        <div id="wrapper">
-            <div id="articles_list">
-                <div class="container">
-                    <div id="board_master" class="text_block">【板主：pi314】</div>
-                    <div id="board_name"   class="text_block">《P_pi314》</div>
-                    <div id="board_title"  class="text_block">作品集</div>
-                </div>
-                <div id="operations" class="line">
-                    [←]離開 [kj]選擇文章 [→]閱讀
-                </div>
-                <div id="article_format" class="container article_widget">
-                    <div class="text_block list_number">編號</div>
-                    <div class="text_block like"></div>
-                    <div class="text_block pushes"></div>
-                    <div class="text_block date">日期</div>
-                    <div class="text_block author">作者</div>
-                    <div class="text_block re"></div>
-                    <div class="text_block article_title">文章標題</div>
-                </div>
-                <div id="articles"></div>
-            </div>
-            <div id="article_content">
-            </div>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>作品集</title>
+    <link rel="shortcut icon" href="Res/logo.png" type="image/vnd.microsoft.icon">
+    <link type="text/css" href="./style/main.css" rel="stylesheet"/>
+    <link type="text/css" href="./style/articles-list.css" rel="stylesheet"/>
+    <link type="text/css" href="./style/color.css" rel="stylesheet"/>
+    <script src="./js/jquery-latest.js"></script>
+    <script src="./js/KeyManager/pi314-keymanager.js"></script>
+    <script src="./js/article-files-list.js"></script>
+    <script src="./js/articles-list.js"></script>
+    <script src="./js/main.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+
+      <div id="articles-list-panel">
+        <div id="board-info" class="line">
+          <div id="board-master" class="text-block">【板主：pi314】</div>
+          <div id="board-name"   class="text-block">《P_pi314》</div>
+          <div id="board-title"  class="text-block">作品集</div>
         </div>
-    </body>
+        <div id="operations" class="line">
+          <div class="text-block">[←]離開 [kj]選擇文章 [→]閱讀</div>
+        </div>
+        <div id="article-format" class="line">
+          <div class="text-block index">編號</div>
+          <div class="text-block like"></div>
+          <div class="text-block pushes"></div>
+          <div class="text-block date">日期</div>
+          <div class="text-block author">作者</div>
+          <div class="text-block re"></div>
+          <div class="text-block article_title">文章標題</div>
+        </div>
+        <div id="articles-list"></div>
+      </div>
+
+      <div id="article-content-panel">
+      </div>
+
+    </div>
+  </body>
 </html>
