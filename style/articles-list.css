@@ -88,5 +88,6 @@
 .focused {
     color: lightgray;
     background: purple;
+    cursor: pointer;
 }
 
