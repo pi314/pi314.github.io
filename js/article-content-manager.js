@@ -4,12 +4,12 @@ var ArticleContentManager = { };
 
 ArticleContentManager.download_article = function (index) {
     $.ajax({
-        url: 'Articles/' + article_files_list[index],
+        url: 'Articles/' + ARTICLE_FILES_LIST[index],
         cache: false,
     }).done(function (msg) {
         ArticleContentManager.parse_and_set_article_content(index, msg);
     });
-}
+};
 
 ArticleContentManager.parse_and_set_article_content = function (index, raw_content) {
     var article_content_object = $('<div id="article-content'+ index +'" class="hidden">');
@@ -27,4 +27,4 @@ ArticleContentManager.parse_and_set_article_content = function (index, raw_conte
     $('#article-content-panel').append(article_content_object);
     articles_ready[index] = true;
 
-}
+};

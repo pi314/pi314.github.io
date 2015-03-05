@@ -5,8 +5,8 @@ var mouse_on_widget = false;
 var ArticleListManager = { };
 
 ArticleListManager.article_list_panel_init = function () {
-    for (var index = 0; index < article_files_list.length; index++) {
-        filename = article_files_list[index];
+    for (var index = 0; index < ARTICLE_FILES_LIST.length; index++) {
+        filename = ARTICLE_FILES_LIST[index];
         $('#articles-list').append(
             '<div id="article-line'+ index +'" class="line">'+
             '<div class="text-block index">'+ (index+1) +'</div>'+
@@ -29,7 +29,7 @@ ArticleListManager.article_list_panel_mouse_binding = function () {
     }).mouseleave(function () {
         $(this).removeClass('focused');
     }).click(function () {
-        enter_article( this.id.substring(12) );
+        StateMachine.enter_article( this.id.substring(12) );
     });
 
     $('#wrapper').mouseenter(function () {
@@ -40,7 +40,7 @@ ArticleListManager.article_list_panel_mouse_binding = function () {
 
     $('body').click(function () {
         if ( !mouse_on_widget ) {
-            leave_article();
+            StateMachine.leave_article();
         }
     });
 };

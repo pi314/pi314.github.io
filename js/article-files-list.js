@@ -1,4 +1,4 @@
-var article_files_list = [
+var ARTICLE_FILES_LIST = [
 "snake3.txt",
 "snake3.2.txt",
 "snake4.6.txt",
