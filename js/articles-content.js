@@ -1,15 +1,17 @@
 var articles_ready = [];
 
-function download_article (index) {
+var ArticleContentManager = { };
+
+ArticleContentManager.download_article = function (index) {
     $.ajax({
         url: 'Articles/' + article_files_list[index],
         cache: false,
     }).done(function (msg) {
-        parse_and_set_article_content(index, msg);
+        ArticleContentManager.parse_and_set_article_content(index, msg);
     });
 }
 
-function parse_and_set_article_content (index, raw_content) {
+ArticleContentManager.parse_and_set_article_content = function (index, raw_content) {
     var article_content_object = $('<div id="article-content'+ index +'" class="hidden">');
 
     console.log(raw_content);

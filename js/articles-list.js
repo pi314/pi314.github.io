@@ -2,25 +2,27 @@
 
 var mouse_on_widget = false;
 
-function article_list_panel_init () {
+var ArticleListManager = { };
+
+ArticleListManager.article_list_panel_init = function () {
     for (var index = 0; index < article_files_list.length; index++) {
         filename = article_files_list[index];
         $('#articles-list').append(
             '<div id="article-line'+ index +'" class="line">'+
             '<div class="text-block index">'+ (index+1) +'</div>'+
-            '<div class="text-block like"></div>'+
-            '<div class="text-block pushes"></div>'+
-            '<div class="text-block date"></div>'+
+            '<div class="text-block like">?</div>'+
+            '<div class="text-block pushes">?</div>'+
+            '<div class="text-block date">??/??</div>'+
             '<div class="text-block author">pi314</div>'+
             '<div class="text-block re"></div>'+
             '<div class="text-block article_title">'+ filename +'</div>'+
             '</div>'
             );
-        download_article(index);
+        ArticleContentManager.download_article(index);
     }
-}
+};
 
-function article_list_panel_mouse_binding () {
+ArticleListManager.article_list_panel_mouse_binding = function () {
     
     $('#articles-list > .line').mouseenter(function () {
         $(this).addClass('focused');
@@ -41,5 +43,5 @@ function article_list_panel_mouse_binding () {
             leave_article();
         }
     });
-}
+};
 
