@@ -38,7 +38,7 @@ ArticleListManager.article_list_panel_mouse_binding = function () {
         mouse_on_widget = false;
     });
 
-    $('body').click(function () {
+    $('html').click(function () {
         if ( !mouse_on_widget ) {
             StateMachine.leave_article();
         }
