@@ -1,5 +1,3 @@
-// This file contains all functions that related to article list
-
 var mouse_on_widget = false;
 
 var ArticleListManager = { };
