@@ -5,6 +5,26 @@
     color: lightgray;
 }
 
+#article-content-panel > div > .line.article-header {
+    background: navy;
+}
+
+#article-content-panel > div > .line.article-header > .text-block.prompt {
+    width: 80px;
+    text-align: center;
+    background: lightgray;
+    color: navy;
+    margin-right: 20px;
+}
+
+#article-content-panel > div > .line.article-header > .text-block.value {
+    padding-right: 20px;
+}
+
+#article-content-panel > div > .line.article-header > .text-block.right {
+    float: right;
+}
+
 a {
     color: orange;
     text-decoration: none;
