@@ -103,7 +103,6 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
         'false': '+',
     };
     articles_info[index]['readed'] = t[ article_info['like'] ];
-    console.log(articles_info['readed']);
 
 };
 
@@ -111,26 +110,26 @@ ArticleContentManager.commit_header = function (article_content_object, article_
     var header_line;
     var header_prompt;
     var header_value;
-    header_line = $('<div class="line article-header"></div>');
-    header_prompt = $('<div class="text-block prompt">作者</div>');
+    header_line = $('<div class="line article-header bn"></div>');
+    header_prompt = $('<div class="text-block prompt fn bw">作者</div>');
     header_value = $('<div class="text-block value">pi314 (圓周率)</div>');
     header_line.append(header_prompt);
     header_line.append(header_value);
-    header_prompt = $('<div class="text-block prompt right">站內</div>');
+    header_prompt = $('<div class="text-block prompt fn bw right">站內</div>');
     header_value = $('<div class="text-block value right">P_pi314</div>');
     header_line.append(header_value);
     header_line.append(header_prompt);
     article_content_object.append(header_line);
 
-    header_line = $('<div class="line article-header"></div>');
-    header_prompt = $('<div class="text-block prompt">標題</div>');
+    header_line = $('<div class="line article-header bn"></div>');
+    header_prompt = $('<div class="text-block prompt fn bw">標題</div>');
     header_value = $('<div class="text-block value">'+ article_info['title'] +'</div>');
     header_line.append(header_prompt);
     header_line.append(header_value);
     article_content_object.append(header_line);
 
-    header_line = $('<div class="line article-header"></div>');
-    header_prompt = $('<div class="text-block prompt">時間</div>');
+    header_line = $('<div class="line article-header bn"></div>');
+    header_prompt = $('<div class="text-block prompt fn bw">時間</div>');
     header_value = $('<div class="text-block value">'+ article_info['date'] +' '+ article_info['week'] +' '+ article_info['time'] +'</div>');
     header_line.append(header_prompt);
     header_line.append(header_value);

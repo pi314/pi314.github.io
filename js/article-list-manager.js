@@ -54,15 +54,15 @@ ArticleListManager.article_list_panel_mouse_binding = function () {
 };
 
 ArticleListManager.set_article_into = function (index, article_info) {
-    var t = {
+    var flag_table = {
         'base':  'B',
         'true':  'M',
         'false': '+',
     };
-    var like_type = t[article_info['like']];
-    $('#article-line'+ index +' > .like').text(like_type);
-    if (like_type != '+') {
-        $('#article-line'+ index +' > .like').addClass(like_type);
+    var flag = flag_table[article_info['like']];
+    $('#article-line'+ index +' > .like').text(flag);
+    if (flag != '+') {
+        $('#article-line'+ index +' > .like').addClass('fC');
     }
     $('#article-line'+ index +' > .date')
         .text( article_info['date'].substring(5) )

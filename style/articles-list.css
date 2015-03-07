@@ -1,33 +1,14 @@
 #board-master {
     float: left;
-    background: lightgray;
-    color: black;
 }
 
 #board-title {
     display: block;
-    background: #007f7f;
-    color: yellow;
     text-align: center;
 }
 
 #board-name {
     float: right;
-    background: lightgray;
-    color: black;
-}
-
-#operations {
-    color: gray;
-}
-
-#article-format {
-    color: black;
-    background: lightgray;
-}
-
-#articles-list > .line {
-    color: lightgray;
 }
 
 .index {
@@ -37,36 +18,12 @@
     width: 60px;
 }
 
-.base {
-    color: yellow;
-}
-
 .like {
     width: 35px;
 }
 
-.B {
-    color: cyan;
-}
-
-.M {
-    color: cyan;
-}
-
 .pushes {
     width: 35px;
-}
-
-.pos-push {
-    color: yellow;
-}
-
-.no-push {
-    color: yellow;
-}
-
-.neg-push {
-    color: gray;
 }
 
 .date {
@@ -83,11 +40,5 @@
 
 .re {
     width: 45px;
-}
-
-.focused {
-    color: lightgray;
-    background: purple;
-    cursor: pointer;
 }
 

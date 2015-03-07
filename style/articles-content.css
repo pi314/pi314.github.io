@@ -1,19 +1,9 @@
 #article-content-panel {
 }
 
-#article-content-panel > div > .line > .text-block {
-    color: lightgray;
-}
-
-#article-content-panel > div > .line.article-header {
-    background: navy;
-}
-
 #article-content-panel > div > .line.article-header > .text-block.prompt {
     width: 80px;
     text-align: center;
-    background: lightgray;
-    color: navy;
     margin-right: 20px;
 }
 
@@ -25,11 +15,3 @@
     float: right;
 }
 
-a {
-    color: orange;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
