@@ -1,3 +1,10 @@
+:like:  true
+:date:  2014/01/10
+:week:  Fri
+:time:  15:59
+:sign:  nctu
+:title: [有趣] 自產生程式
+
 最近迷上了一個東西：quine
 
 在計算機科學裡面, 這個字的意思是「自產生程式」

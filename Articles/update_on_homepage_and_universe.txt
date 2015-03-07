@@ -1,3 +1,11 @@
+:like:  true
+:date:  2013/10/12
+:week:  Sat
+:time:  20:13
+:sign:  nctu
+:title: [作品] 新風格首頁 & Universe1.2
+:push:  update_on_homepage_and_universe_p.txt
+
 又更新了一次呢，不過這次是全部重寫XD
 
 為了這次的更新，寫了一個 displayer module

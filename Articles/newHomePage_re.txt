@@ -1,3 +1,11 @@
+:like:  true
+:date:  2012/08/19
+:week:  Sun
+:time:  22:31
+:sign:  hualien
+:title: [作品] 新風格首頁
+:re:    true
+
 2012/08/17 更新：
 更新了首頁o(˙ω˙)o
 http://www.cs.nctu.edu.tw/~cychih

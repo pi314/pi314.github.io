@@ -19,12 +19,14 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
 
     var in_header = true;
     var article_info = {
-        'like':'true',
-        'datetime':'yyyy/mm/dd.HH:MM',
-        'week':'What',
-        'sign':'nctu',
-        'title':'(empty)',
-        'push':'',
+        'like':     'true',
+        'date':     '????/??/??',
+        'time':     '??:??',
+        'week':     '?',
+        'sign':     'nctu',
+        'title':    ARTICLE_FILES_LIST[index],
+        'push':     '',
+        're':       'false',
     };
     for (var l = 0; l < lines.length; l++) {
         console.log(lines[l], in_header);
@@ -94,8 +96,7 @@ ArticleContentManager.commit_header = function (article_content_object, article_
 
     header_line = $('<div class="line article-header"></div>');
     header_prompt = $('<div class="text-block prompt">時間</div>');
-    var d = article_info['datetime'].split('.');
-    header_value = $('<div class="text-block value">'+ d[0] +' '+ article_info['week'] +' '+ d[1] +'</div>');
+    header_value = $('<div class="text-block value">'+ article_info['date'] +' '+ article_info['week'] +' '+ article_info['time'] +'</div>');
     header_line.append(header_prompt);
     header_line.append(header_value);
     article_content_object.append(header_line);

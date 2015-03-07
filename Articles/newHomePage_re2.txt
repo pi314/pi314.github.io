@@ -1,3 +1,12 @@
+:like:  true
+:date:  2012/09/26
+:week:  Wed
+:time:  23:59
+:sign:  nctu
+:title: [作品] 新風格首頁
+:re:    true
+:push:  newHomePage_re2_p.txt
+
 更新！
 
 花了一點時間

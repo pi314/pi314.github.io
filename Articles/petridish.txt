@@ -1,3 +1,10 @@
+:like:  true
+:date:  2012/07/31
+:week:  Tue
+:time:  17:18
+:sign:  hualien
+:title: [程式] Petri dish---培養皿
+
 雛形
 <a href="./Game/PetriDish/Petri_dish.exe">Petri_dish</a>
 

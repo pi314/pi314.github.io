@@ -1,3 +1,10 @@
+:like:  false
+:date:  2012/08/01
+:week:  Wed
+:time:  17:31
+:sign:  hualien
+:title: [程式] Matrix_II
+
 看過駭客任務嗎
 裡面常常會用很多綠色的字
 來表示母體的本質

@@ -1,3 +1,11 @@
+:like:  true
+:date:  2013/02/24
+:week:  Sun
+:time:  21:32
+:sign:  hualien
+:title: [作品] Universe
+:re:    true
+
 <a href="./Game/Universe/universe1.1.html" target="_blank">宇宙1.1</a>
 
 哇啊  半年了

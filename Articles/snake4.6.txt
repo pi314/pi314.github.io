@@ -1,3 +1,10 @@
+:like:  true
+:date:  2012/08/01
+:week:  Wed
+:time:  17:01
+:sign:  hualien
+:title: [作品] pi 蛇 4.6
+
 這個版本　4.6
 把前一版的 AI 改進了很多
 包括死路預測、無目標行為

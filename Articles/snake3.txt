@@ -1,8 +1,9 @@
-:like:      true
-:datetime:  2012/07/31.16:19
-:week:      Tue
-:sign:      hualien
-:title:     [遊戲] 貪吃蛇III
+:like:  true
+:date:  2012/07/31
+:time:  16:19
+:week:  Tue
+:sign:  hualien
+:title: [遊戲] 貪吃蛇III
 
 如題，從 III 可以看出前面有兩個版本了
 在這裡大概介紹一下

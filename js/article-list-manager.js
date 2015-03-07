@@ -50,7 +50,7 @@ ArticleListManager.set_article_into = function (index, article_info) {
         'false': '  ',
     };
     $('#article-line'+ index +' > .like').text(t[article_info['like']][0]).addClass(t[article_info['like']][1]);
-    $('#article-line'+ index +' > .date').text( article_info['datetime'].split('.')[0].substring(5) );
+    $('#article-line'+ index +' > .date').text( article_info['date'].substring(5) );
     $('#article-line'+ index +' > .title').text( article_info['title'] );
 };
 
