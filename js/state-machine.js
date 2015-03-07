@@ -3,6 +3,7 @@ var ST_ARTICLE = 'ARTICLE';
 
 var StateMachine = { };
 var last_readed = 0;
+var scroll_top = 0;
 
 StateMachine.state = '';
 
@@ -54,6 +55,8 @@ StateMachine.enter_article = function (index) {
             }
         }
     }
+    scroll_top = $('body').scrollTop();
+    $('body').scrollTop(0);
 
 };
 
@@ -62,6 +65,7 @@ StateMachine.leave_article = function () {
     $('#articles-list-panel').removeClass('hidden');
     $('#article-content-panel').addClass('hidden');
     $('#article-content-panel > div').addClass('hidden');
+    $('body').scrollTop(scroll_top);
     console.log('leave article');
 };
 
