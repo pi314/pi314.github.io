@@ -12,8 +12,8 @@ ArticleListManager.article_list_panel_init = function () {
             '<div class="text-block pushes">?</div>'+
             '<div class="text-block date">??/??</div>'+
             '<div class="text-block author">pi314</div>'+
-            '<div class="text-block re"></div>'+
-            '<div class="text-block article_title">'+ filename +'</div>'+
+            '<div class="text-block re">◇</div>'+
+            '<div class="text-block title">'+ filename +'</div>'+
             '</div>'
             );
         ArticleContentManager.download_article(index);
@@ -41,5 +41,16 @@ ArticleListManager.article_list_panel_mouse_binding = function () {
             StateMachine.leave_article();
         }
     });
+};
+
+ArticleListManager.set_article_into = function (index, article_info) {
+    var t = {
+        'base':  'bB',
+        'true':  'mM',
+        'false': '  ',
+    };
+    $('#article-line'+ index +' > .like').text(t[article_info['like']][0]).addClass(t[article_info['like']][1]);
+    $('#article-line'+ index +' > .date').text( article_info['datetime'].split('.')[0].substring(5) );
+    $('#article-line'+ index +' > .title').text( article_info['title'] );
 };
 

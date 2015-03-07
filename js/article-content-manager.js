@@ -63,6 +63,8 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
     // put the article content container into page
     $('#article-content-panel').append(article_content_object);
 
+    ArticleListManager.set_article_into(index, article_info);
+
     // this article is ready now
     articles_ready[index] = true;
 
