@@ -1,3 +1,13 @@
+var WEEK_COLOR = {
+    "Mon": "fG",
+    "Tue": "fY",
+    "Wed": "fL",
+    "Thu": "fP",
+    "Fri": "fC",
+    "Sat": "fW",
+    "Sun": "fR",
+};
+
 var mouse_on_widget = false;
 
 var ArticleListManager = { };
@@ -54,7 +64,9 @@ ArticleListManager.set_article_into = function (index, article_info) {
     if (like_type != '+') {
         $('#article-line'+ index +' > .like').addClass(like_type);
     }
-    $('#article-line'+ index +' > .date').text( article_info['date'].substring(5) );
+    $('#article-line'+ index +' > .date')
+        .text( article_info['date'].substring(5) )
+        .addClass(WEEK_COLOR[article_info['week']]);
     $('#article-line'+ index +' > .title').text( article_info['title'] );
 };
 
