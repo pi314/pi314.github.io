@@ -6,7 +6,7 @@ var StateMachine = { };
 StateMachine.state = '';
 
 StateMachine.state_init = function () {
-    state = ST_LIST;
+    StateMachine.state = ST_LIST;
 };
 
 StateMachine.enter_article = function (index) {
@@ -15,14 +15,14 @@ StateMachine.enter_article = function (index) {
         console.log('skip article ' + index);
         return;
     }
-    state = ST_ARTICLE;
+    StateMachine.state = ST_ARTICLE;
     $('#articles-list-panel').addClass('hidden');
     $('#article-content-panel').removeClass('hidden');
     $('#article-content'+ index).removeClass('hidden');
 };
 
 StateMachine.leave_article = function () {
-    state = ST_LIST;
+    StateMachine.state = ST_LIST;
     $('#articles-list-panel').removeClass('hidden');
     $('#article-content-panel').addClass('hidden');
     $('#article-content-panel > div').addClass('hidden');

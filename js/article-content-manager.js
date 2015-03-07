@@ -1,8 +1,33 @@
 var articles_ready = [];
 
+var signatures = {'':[]};
 var ArticleContentManager = { };
 
+ArticleContentManager.handle_signatures = function (raw_content) {
+    var lines = raw_content.split(/\r?\n/g);
+    var parsing_content = false;
+    var signature_name = '';
+    for (var l = 0; l < lines.length; l++) {
+        if (parsing_content) {
+            if (lines[l] == ':end:') {
+                parsing_content = false;
+            } else {
+                signatures[signature_name].push(lines[l]);
+            }
+        } else {
+            var match = /^:start: *(.*)$/.exec(lines[l]);
+            if (match != null) {
+                signature_name = match[1];
+                signatures[signature_name] = [];
+                parsing_content = true;
+            }
+        }
+    }
+
+}
+
 ArticleContentManager.download_article = function (index) {
+    // download article, parse it, and show it on webpage
     $.ajax({
         url: 'Articles/' + ARTICLE_FILES_LIST[index],
         cache: false,
@@ -14,24 +39,23 @@ ArticleContentManager.download_article = function (index) {
 ArticleContentManager.handle_article_content = function (index, raw_content) {
     // the article content container
     var article_content_object = $('<div id="article-content'+ index +'" class="hidden">');
-
-    lines = raw_content.split(/\r?\n/g);
-
+    var lines = raw_content.split(/\r?\n/g);
     var in_header = true;
     var article_info = {
         'like':     'true',
         'date':     '????/??/??',
         'time':     '??:??',
         'week':     '?',
-        'sign':     'nctu',
+        'sign':     '',
         'title':    ARTICLE_FILES_LIST[index],
         'push':     '',
         're':       'false',
     };
+
+    // iterate article content line by line
     for (var l = 0; l < lines.length; l++) {
-        console.log(lines[l], in_header);
-        // still in article header
         if (in_header) {
+            // still in article header
             if ( lines[l] == '' ) {
                 in_header = false;
             }
@@ -39,12 +63,11 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
             var match = /^:(.*?): *(.*)$/.exec(lines[l]);
             if (match == null) {
                 ArticleContentManager.commit_header(article_content_object, article_info);
-                article_content_object.append('<div class="line"><div class="text-block">'+ lines[l] +'</div></div>');
+                ArticleContentManager.add_line(article_content_object, lines[l]);
                 in_header = false;
                 continue;
             }
             article_info[ match[1] ] = match[2];
-            console.log(match);
 
             if (in_header == false) {
                 ArticleContentManager.commit_header(article_content_object, article_info);
@@ -54,12 +77,17 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
 
         // article content, plane text
         if (lines[l] == '') {
-            // this does not work, I need another method to display an empty line
-            article_content_object.append('<div class="line"><div class="text-block"><br></div></div>');
+            ArticleContentManager.add_line(article_content_object, '<br>');
         } else {
-            article_content_object.append('<div class="line"><div class="text-block">'+ lines[l] +'</div></div>');
+            ArticleContentManager.add_line(article_content_object, lines[l]);
         }
 
+    }
+
+    // add signature content
+    ArticleContentManager.add_line(article_content_object, '--');
+    for (l = 0; l < signatures[ article_info['sign'] ].length; l++) {
+        ArticleContentManager.add_line(article_content_object, signatures[ article_info['sign'] ][l]);
     }
 
     // put the article content container into page
@@ -100,5 +128,14 @@ ArticleContentManager.commit_header = function (article_content_object, article_
     header_line.append(header_prompt);
     header_line.append(header_value);
     article_content_object.append(header_line);
-    article_content_object.append('<div class="line"><div class="text-block"><br></div></div>');
+    ArticleContentManager.add_line(article_content_object, '<br>');
 };
+
+ArticleContentManager.add_line = function (article_content_object, line_content) {
+    if (line_content[0] == '>') {
+        line_content = '<div class="text-block fc">'+ line_content +'</div>';
+    } else if (line_content[0] == '※') {
+        line_content = '<div class="text-block fg">'+ line_content +'</div>';
+    }
+    article_content_object.append('<div class="line"><div class="text-block">'+ line_content +'</div></div>');
+}
