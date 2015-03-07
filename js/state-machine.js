@@ -19,6 +19,19 @@ StateMachine.enter_article = function (index) {
     $('#articles-list-panel').addClass('hidden');
     $('#article-content-panel').removeClass('hidden');
     $('#article-content'+ index).removeClass('hidden');
+    switch (articles_readed[index]) {
+    case 'B':
+        $('#article-line'+ index +' > .like').text('b');
+        break
+    case 'M':
+        $('#article-line'+ index +' > .like').text('m');
+        break
+    case '+':
+        $('#article-line'+ index +' > .like').text(' ');
+        break
+    }
+    articles_readed[index] = true;
+
 };
 
 StateMachine.leave_article = function () {
@@ -28,3 +41,4 @@ StateMachine.leave_article = function () {
     $('#article-content-panel > div').addClass('hidden');
     console.log('leave article');
 };
+

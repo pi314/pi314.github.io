@@ -1,4 +1,5 @@
 var articles_ready = [];
+var articles_readed = [];
 
 var signatures = {'':[]};
 var ArticleContentManager = { };
@@ -84,7 +85,7 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
 
     }
 
-    // add signature content
+    // add signature contents
     ArticleContentManager.add_line(article_content_object, '--');
     for (l = 0; l < signatures[ article_info['sign'] ].length; l++) {
         ArticleContentManager.add_line(article_content_object, signatures[ article_info['sign'] ][l]);
@@ -97,6 +98,13 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
 
     // this article is ready now
     articles_ready[index] = true;
+    var t = {
+        'base':  'B',
+        'true':  'M',
+        'false': '+',
+    };
+    articles_readed[index] = t[ article_info['like'] ];
+    console.log(articles_readed[index]);
 
 };
 
@@ -139,3 +147,4 @@ ArticleContentManager.add_line = function (article_content_object, line_content)
     }
     article_content_object.append('<div class="line"><div class="text-block">'+ line_content +'</div></div>');
 }
+
