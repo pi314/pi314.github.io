@@ -28,7 +28,7 @@ Coding style 也不怎麼好
 因為這個親手打造的展示台
 本身也是一個作品
 
-[Rb;e[Gb;n[Nb;j[Yb;o[Rb;y[Bb;~[Cb;:[Wb;)[;
+[Rb;e[Gb;n[Nb;j[Yb;o[Pb;y[Bb;~[Cb;:[Wb;)[;
 
  ----
 pi

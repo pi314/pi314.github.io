@@ -142,6 +142,12 @@ ArticleContentManager.add_line = function (article_content_object, line_content)
     } else if (line_content[0] == '※') {
         line_content = '<div class="text-block fg">'+ line_content +'</div>';
     }
+
+    // replace color codes: [XY; -> class="fX bY"
+    line_content = line_content.replace(
+        /\[([brgynpcwoBRGYNPCWO])([brgynpcwoBRGYNPCWO]);/g,
+        '<div class="text-block f$1 b$2">');
+    line_content = line_content.replace(/\[;/g, '</div>');
     article_content_object.append('<div class="line"><div class="text-block">'+ line_content +'</div></div>');
 }
 
