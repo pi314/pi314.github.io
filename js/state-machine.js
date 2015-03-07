@@ -12,7 +12,7 @@ StateMachine.state_init = function () {
 
 StateMachine.enter_article = function (index) {
     console.log('enter article ' + index);
-    if ( !articles_ready[index] ) {
+    if ( !(index in articles_info) ) {
         console.log('skip article ' + index);
         return;
     }
@@ -20,7 +20,7 @@ StateMachine.enter_article = function (index) {
     $('#articles-list-panel').addClass('hidden');
     $('#article-content-panel').removeClass('hidden');
     $('#article-content'+ index).removeClass('hidden');
-    switch (articles_readed[index]) {
+    switch (articles_info[index]['readed']) {
     case 'B':
         $('#article-line'+ index +' > .like').text('b');
         break
@@ -31,12 +31,32 @@ StateMachine.enter_article = function (index) {
         $('#article-line'+ index +' > .like').text(' ');
         break
     }
-    articles_readed[index] = true;
-    $('#article-line'+ last_readed +' > .title').removeClass('fG');
-    $('#article-line'+ last_readed +' > .re').removeClass('fG');
+    articles_info[index]['readed'] = 'true';
+    // uncolor all same titled articles
+    for (var a = 0; a < articles_info.length; a++) {
+        if (articles_info[a]['title'] == articles_info[last_readed]['title']) {
+            if (articles_info[a]['re'] == 'true') {
+                $('#article-line'+ a +' > .title').removeClass('fY');
+                $('#article-line'+ a +' > .re').removeClass('fY').text('Re');
+            } else {
+                $('#article-line'+ a +' > .title').removeClass('fG');
+                $('#article-line'+ a +' > .re').removeClass('fG');
+            }
+        }
+    }
     last_readed = index;
-    $('#article-line'+ last_readed +' > .title').addClass('fG');
-    $('#article-line'+ last_readed +' > .re').addClass('fG');
+    // color all same titled articles
+    for (var a = 0; a < articles_info.length; a++) {
+        if (articles_info[a]['title'] == articles_info[last_readed]['title']) {
+            if (articles_info[a]['re'] == 'true') {
+                $('#article-line'+ a +' > .title').addClass('fY');
+                $('#article-line'+ a +' > .re').addClass('fY').text('=>');
+            } else {
+                $('#article-line'+ a +' > .title').addClass('fG');
+                $('#article-line'+ a +' > .re').addClass('fG');
+            }
+        }
+    }
 
 };
 

@@ -67,6 +67,9 @@ ArticleListManager.set_article_into = function (index, article_info) {
     $('#article-line'+ index +' > .date')
         .text( article_info['date'].substring(5) )
         .addClass(WEEK_COLOR[article_info['week']]);
+    if (article_info['re'] == 'true') {
+        $('#article-line'+ index +' > .re').text('Re')
+    }
     $('#article-line'+ index +' > .title').text( article_info['title'] );
 };
 

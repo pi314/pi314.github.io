@@ -1,5 +1,4 @@
-var articles_ready = [];
-var articles_readed = [];
+var articles_info = [];
 
 var signatures = {'':[]};
 var ArticleContentManager = { };
@@ -97,14 +96,14 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
     ArticleListManager.set_article_into(index, article_info);
 
     // this article is ready now
-    articles_ready[index] = true;
+    articles_info[index] = article_info;
     var t = {
         'base':  'B',
         'true':  'M',
         'false': '+',
     };
-    articles_readed[index] = t[ article_info['like'] ];
-    console.log(articles_readed[index]);
+    articles_info[index]['readed'] = t[ article_info['like'] ];
+    console.log(articles_info['readed']);
 
 };
 
