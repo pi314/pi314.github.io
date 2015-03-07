@@ -148,6 +148,9 @@ ArticleContentManager.add_line = function (article_content_object, line_content)
         /\[([brgynpcwoBRGYNPCWO])([brgynpcwoBRGYNPCWO]);/g,
         '<div class="text-block f$1 b$2">');
     line_content = line_content.replace(/\[;/g, '</div>');
+    // hyper links, not accurate but I think it's enough
+    line_content = line_content.replace(/(^|[^"<])(https?:\/\/[^ ]*)(?![">])/g, '$1<a href="$2" target="_blank">$2</a>');
+    line_content = line_content.replace(/`(.*) +<(.*)>`_/g, '<a href="$2" target="_blank">$1</a>');
     article_content_object.append('<div class="line"><div class="text-block">'+ line_content +'</div></div>');
 }
 

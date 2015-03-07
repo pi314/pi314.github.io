@@ -29,7 +29,7 @@ from：http://zh.wikipedia.org/wiki/Brainfuck
  ----
 這是大一時作出的一個 IDE
 下載：
-<a href="./Game/Brainfuck/BrainFuckInterpreter.exe">BrainFuckInterpreter</a>
+`BrainFuckInterpreter <./Game/Brainfuck/BrainFuckInterpreter.exe">`_
 
 內容包含一個直譯器和一個文字編輯器
 使用說明都在左方有說明

@@ -30,12 +30,12 @@
 --
 因為真的很好玩, 所以我也寫了幾支,
 
-<a href="./Game/quine/quine.c">C 語言</a>
-<a href="./Game/quine/quine.py">Python 語言</a>
-<a href="./Game/quine/quine2.py">Python 語言 (另一解)</a>
-<a href="./Game/quine/quine.sh">Shell Script</a>
-<a href="./Game/quine/polyglot_quine.c">C 和 Python 的 quine</a>
-<a href="./Game/quine/relay_quine.cpp">C++ 和 Python 的 quine</a>
+`C 語言 <./Game/quine/quine.c>`_
+`Python 語言 <./Game/quine/quine.py>`_
+`Python 語言 (另一解) <./Game/quine/quine2.py>`_
+`Shell Script <./Game/quine/quine.sh>`_
+`C 和 Python 的 quine <./Game/quine/polyglot_quine.c>`_
+`C++ 和 Python 的 quine <./Game/quine/relay_quine.cpp>`_
 
 當然過程中有看提示, 我沒那麼厲害可以自己想出來.
 

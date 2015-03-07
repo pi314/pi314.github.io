@@ -12,7 +12,7 @@
 但一直沒有好的 idea 　不知道該怎麼呈現
 中間做了一兩個頁面　但都差強人意
 最後決定仿 bs2 的介面　做出了這個網頁
-<a href="http://www.cs.nctu.edu.tw/~cychih">http://www.cs.nctu.edu.tw/~cychih</a>
+http://www.cs.nctu.edu.tw/~cychih
 
 工時不長　大約兩三個工作天
 外觀不很精緻

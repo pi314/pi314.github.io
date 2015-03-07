@@ -15,8 +15,8 @@
 
 就整理在這裡好了XD
 
-<a href="./Other/pietty0327.exe">pietty0327</a>
-<a href="http://boshiamy.com/hliu.html">網．蝦米</a>
+`pietty0327 <./Other/pietty0327.exe>`_
+`網．蝦米 <http://boshiamy.com/hliu.html>`_
 https://raw.github.com/pi314/rcfiles/master/.tcshrc
 https://raw.github.com/pi314/rcfiles/master/.vimrc
 https://raw.github.com/pi314/rcfiles/master/.screenrc
