@@ -2,6 +2,7 @@ var ST_LIST = 'LIST';
 var ST_ARTICLE = 'ARTICLE';
 
 var StateMachine = { };
+var last_readed = 0;
 
 StateMachine.state = '';
 
@@ -31,6 +32,11 @@ StateMachine.enter_article = function (index) {
         break
     }
     articles_readed[index] = true;
+    $('#article-line'+ last_readed +' > .title').removeClass('fG');
+    $('#article-line'+ last_readed +' > .re').removeClass('fG');
+    last_readed = index;
+    $('#article-line'+ last_readed +' > .title').addClass('fG');
+    $('#article-line'+ last_readed +' > .re').addClass('fG');
 
 };
 
