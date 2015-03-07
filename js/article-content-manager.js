@@ -98,7 +98,6 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
     // this article is ready now
     articles_info[index] = article_info;
     var t = {
-        'base':  'B',
         'true':  'M',
         'false': '+',
     };

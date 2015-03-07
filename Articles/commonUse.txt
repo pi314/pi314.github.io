@@ -1,4 +1,4 @@
-:like:  base
+:like:  true
 :date:  2012/08/02
 :week:  Thu
 :time:  17:45

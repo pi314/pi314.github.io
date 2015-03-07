@@ -21,9 +21,6 @@ StateMachine.enter_article = function (index) {
     $('#article-content-panel').removeClass('hidden');
     $('#article-content'+ index).removeClass('hidden');
     switch (articles_info[index]['readed']) {
-    case 'B':
-        $('#article-line'+ index +' > .like').text('b');
-        break
     case 'M':
         $('#article-line'+ index +' > .like').text('m');
         break

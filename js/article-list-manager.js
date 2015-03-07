@@ -55,7 +55,6 @@ ArticleListManager.article_list_panel_mouse_binding = function () {
 
 ArticleListManager.set_article_into = function (index, article_info) {
     var flag_table = {
-        'base':  'B',
         'true':  'M',
         'false': '+',
     };
