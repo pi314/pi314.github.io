@@ -84,11 +84,7 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
 
     }
 
-    // add signature contents
-    ArticleContentManager.add_line(article_content_object, '--');
-    for (l = 0; l < signatures[ article_info['sign'] ].length; l++) {
-        ArticleContentManager.add_line(article_content_object, signatures[ article_info['sign'] ][l]);
-    }
+    ArticleContentManager.add_signature(article_content_object, article_info['sign']);
 
     // put the article content container into page
     $('#article-content-panel').append(article_content_object);
@@ -154,3 +150,9 @@ ArticleContentManager.add_line = function (article_content_object, line_content)
     article_content_object.append('<div class="line"><div class="text-block">'+ line_content +'</div></div>');
 }
 
+ArticleContentManager.add_signature = function (article_content_object, signature_data) {
+    ArticleContentManager.add_line(article_content_object, '--');
+    for (l = 0; l < signatures[ signature_data ].length; l++) {
+        ArticleContentManager.add_line(article_content_object, signatures[ signature_data ][l]);
+    }
+}
