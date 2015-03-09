@@ -52,7 +52,7 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
         're':       'false',
     };
 
-    // iterate article content line by line
+    // itevote article content line by line
     for (var l = 0; l < lines.length; l++) {
         if (in_header) {
             // still in article header
@@ -99,6 +99,8 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
     };
     articles_info[index]['readed'] = t[ article_info['like'] ];
 
+    ArticleContentManager.add_pushes(index, article_info['push']);
+
 };
 
 ArticleContentManager.commit_header = function (article_content_object, article_info) {
@@ -144,15 +146,50 @@ ArticleContentManager.add_line = function (article_content_object, line_content)
         /\[([brgynpcwoBRGYNPCWO])([brgynpcwoBRGYNPCWO]);/g,
         '<div class="text-block f$1 b$2">');
     line_content = line_content.replace(/\[;/g, '</div>');
-    // hyper links, not accurate but I think it's enough
+    // hyper links, not accuvote but I think it's enough
     line_content = line_content.replace(/(^|[^"<])(https?:\/\/[^ ]*)(?![">])/g, '$1<a href="$2" target="_blank">$2</a>');
     line_content = line_content.replace(/`(.*) +<(.*)>`_/g, '<a href="$2" target="_blank">$1</a>');
     article_content_object.append('<div class="line"><div class="text-block">'+ line_content +'</div></div>');
-}
+};
 
 ArticleContentManager.add_signature = function (article_content_object, signature_data) {
     ArticleContentManager.add_line(article_content_object, '--');
     for (l = 0; l < signatures[ signature_data ].length; l++) {
         ArticleContentManager.add_line(article_content_object, signatures[ signature_data ][l]);
     }
-}
+};
+
+ArticleContentManager.add_pushes = function (index, push_file) {
+    if (push_file == '') {
+        // no push file needed
+        ArticleListManager.set_pushes(index, null);
+        return;
+    }
+
+    $.ajax({
+        url: 'Articles/'+ push_file,
+        cache: false,
+    }).done(function (raw_content) {
+        var article_content_object = $('#article-content'+ index);
+        var lines = raw_content.split(/\r?\n/g);
+        var pushes = 0;
+        for (var l = 0; l < lines.length; l++) {
+            var match = /^([-^v])[0-9?]{4}\/([0-9?]{2}\/[0-9?]{2})-([0-9?]{2}:[0-9?]{2})\|(.*)$/.exec(lines[l]);
+            if (match == null) {
+                continue;
+            }
+            var push_flag = match[1];
+            var push_str = '<div class="text-block '+{'^':'fW', '-':'fy', 'v':'fW'}[push_flag]+' push">'
+                + {'^':'推','-':'→','v':'噓'}[push_flag]
+                +'</div>';
+            var author_str = '<div class="text-block fY">pi314</div>';
+            var content_str = '<div class="text-block fy">：'+ match[4] +'</div>';
+            var date_str = '<div class="text-block date fw">'+ match[2] +'</div>';
+            var time_str = '<div class="text-block time fw">'+ match[3] +'</div>';
+            var line_str = push_str + author_str + content_str + time_str + date_str;
+            article_content_object.append('<div class="line">'+ line_str +'</div>');
+            pushes += {'^':1, '-':0, 'v':-1}[push_flag];
+        }
+        ArticleListManager.set_pushes(index, pushes);
+    });
+};

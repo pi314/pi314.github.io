@@ -72,3 +72,17 @@ ArticleListManager.set_article_into = function (index, article_info) {
     $('#article-line'+ index +' > .title').text( article_info['title'] );
 };
 
+ArticleListManager.set_pushes = function (index, pushes) {
+    if (pushes == null) {
+        $('#article-line'+ index +' > .pushes').text('');
+    } else {
+        if (pushes >= 0) {
+            $('#article-line'+ index +' > .pushes').text(pushes);
+            $('#article-line'+ index +' > .pushes').addClass('fY');
+        } else {
+            $('#article-line'+ index +' > .pushes').text(0-pushes);
+            $('#article-line'+ index +' > .pushes').addClass('fB');
+        }
+    }
+};
+
