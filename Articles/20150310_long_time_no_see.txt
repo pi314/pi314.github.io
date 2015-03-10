@@ -1,0 +1,91 @@
+:like:  true
+:date:  2015/03/10
+:week:  Tue
+:time:  21:06
+:sign:  nctu
+:title: [心情] 好久不見
+
+有一年沒有更新這裡了呢，其實中間也有寫一些東西，但後來就放著沒有發佈
+這次一次寫在這裡吧
+
+--
+第一個改變是這個作品集，前一個版本我企圖模仿 BBS 的操作方式
+於是用了之前寫的一個 Library 來處理按鍵輸入
+又手刻了另一個 Library 來處理畫面顯示
+
+但後來換成 Mac 以後發現，Mac 的網頁捲動方向和 Windows 是相反的
+事件的觸發方式也不一樣
+原本的設計在 Mac 上顯得不太友善
+
+在原本的文章架構下，發表新文章也很麻煩，也許我是這樣才一直沒有寫新文章吧
+
+總之就重寫了，加上這次的話，是第三次了唷，每次都覺得比前作更加改進
+覺得開心
+
+--
+第二個是 `Universe1.3 <Game/Universe/universe1.3.html>`_
+這是我一直都很喜歡的作品，2012 年寫好第一版，沒想到之後又改了好幾次
+其實我不太確定 1.3 和 1.2 差在哪，就先這樣吧
+
+--
+第三個是 `串珠2 <Game/Chain/chain2.html>`_ ，和 `串珠 <Game/Chain/chain.html>`_ 一樣都是寫寫玩玩的，不過有點不同
+
+和前作比起來，球球之間的間距變小了，也少了 Shift 鍵可以用
+不過這個可以用滑鼠拖著跑
+
+球的數量很多的時候很好玩，但少到剩下 3 個的時候也有很有趣的效果
+
+有點 bug，但因為只是寫來玩的，所以沒有打算去修
+
+--
+第四個是 `Matrix <Game/Matrix/matrix.html>`_ ，沒錯，就是那個 Matrix
+
+以前我已經用 Windows API `寫過一個了 <#matrix2.txt>`_
+
+但覺得不滿意，有幾個原因
+
+1.  Windows 的小黑窗很醜
+2.  Windows 的小黑窗不方便調整大小
+3.  效能有點差
+4.  Windows only
+
+今年 02/12 我提早幾天回家過年，在回家的火車上把它寫完了
+
+在寫的時候感覺到自己對 JavaScript 仍然不夠熟，但也感覺到功力比以前高很多
+
+--
+除了遊戲以外，我也寫了點其他的東西，都在 `我的 Github 頁面 <https://github.com/pi314>`_ 上
+
+最想推出去的是 `BoshiamyIM <https://github.com/pi314/BoshiamyIM>`_
+
+這是一個 Vim Plugin，可以用 `Vundle <https://github.com/gmarik/Vundle.vim>`_ 安裝
+
+這是我寫的第一個 Vim Plugin，用來在 Vim 裡面用嘸蝦米輸入中文
+而不切換到系統的輸入法
+
+--
+還有 `pi314.rst.vim <https://github.com/pi314/pi314.rst.vim>`_ ，也是個 Vim Plugin
+用來輔助 reStructuredText 格式的編輯
+
+--
+比較和程式無關的是 `ascii-arts <https://github.com/pi314/ascii-arts>`_ 和 `SCP 基金會文章翻譯 <https://github.com/pi314/pi314-scp-foundation>`_
+
+ascii-arts 顧名思義，就是用純文字畫圖啦
+不過我才畫了兩三張就沒再畫了，寫程式優先
+
+SCP 基金會文章翻譯是最近迷上的東西，簡單來說就是一大堆科幻故事集
+
+--
+好啦，總算是把欠著的東西整理好，護貝、裱框、放在這裡，了去一椿心願
+
+其實還有許多東西想做，有許多東西想寫，但時間不夠
+
+有空的時候常常已經累了，連電腦也不想打開
+
+它們就這樣封存著，不知道什麼時候會再被看見
+
+都在這個網站裡唷，在 /Working 底下
+
+像是 pi 蛇第 6 代、像是培養皿、像是可嵌入別的頁面的 Universe
+
+不知道還有沒有機會，再把它們拿出來，吹掉上面的灰塵，再繼續寫下去
