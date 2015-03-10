@@ -1,3 +1,10 @@
+:like:  true
+:date:  2012/08/01
+:week:  Wed
+:time:  19:10
+:sign:  hualien
+:title: [程式] Brainfuck
+
 Brainfuck 是一種極小的程式語言
 "語法" 只使用八個符號，其他皆視為註解
 
@@ -22,7 +29,7 @@ from：http://zh.wikipedia.org/wiki/Brainfuck
  ----
 這是大一時作出的一個 IDE
 下載：
-<a href="./Game/Brainfuck/BrainFuckInterpreter.exe">BrainFuckInterpreter</a>
+`BrainFuckInterpreter <./Game/Brainfuck/BrainFuckInterpreter.exe">`_
 
 內容包含一個直譯器和一個文字編輯器
 使用說明都在左方有說明

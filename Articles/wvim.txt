@@ -1,3 +1,10 @@
+:like:  true
+:date:  2013/08/20
+:week:  Tue
+:time:  21:34
+:sign:  hualien
+:title: [作品] wvim
+
 [作品]
 這次的比較冷門哈哈　不是遊戲　是 vim
 

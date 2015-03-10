@@ -1,3 +1,9 @@
+:like:  true
+:date:  2012/08/02
+:week:  Thu
+:sign:  hualien
+:title: [作品] 貪吃蛇 5
+
 以往，我一直是採用 windows API 裡的
 移游標、改字色、以及 getch() 函式
 來做出遊戲

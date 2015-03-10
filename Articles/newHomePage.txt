@@ -1,3 +1,10 @@
+:like:  true
+:date:  2012/08/02
+:week:  Thu
+:time:  17:40
+:sign:  hualien
+:title: [作品] 新風格首頁
+
 喜歡寫程式的人　應該多少都會想把作品分享出去吧
 就像寫作的人會想投稿一樣
 
@@ -5,11 +12,11 @@
 但一直沒有好的 idea 　不知道該怎麼呈現
 中間做了一兩個頁面　但都差強人意
 最後決定仿 bs2 的介面　做出了這個網頁
-<a href="http://www.cs.nctu.edu.tw/~cychih">http://www.cs.nctu.edu.tw/~cychih</a>
+http://www.cs.nctu.edu.tw/~cychih
 
 工時不長　大約兩三個工作天
 外觀不很精緻
-很多該有的細節沒有實現　<cdd>應該有人會試著開燈吧XD</cdd>
+很多該有的細節沒有實現　[bb;應該有人會試著開燈吧XD[;
 Coding style 也不怎麼好
 不過　因為這個作品　為自己開發了一些工具
 也讀了一些東西
@@ -21,7 +28,7 @@ Coding style 也不怎麼好
 因為這個親手打造的展示台
 本身也是一個作品
 
-<Rb>e</><Gb>n</><Nb>j</><Yb>o</><Pb>y</><Bb>~</><Cb>:</><Wb>)</>
+[Rb;e[Gb;n[Nb;j[Yb;o[Pb;y[Bb;~[Cb;:[Wb;)[;
 
  ----
 pi

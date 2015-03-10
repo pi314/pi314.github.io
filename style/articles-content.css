@@ -1,0 +1,31 @@
+#article-content-panel {
+}
+
+#article-content-panel > div > .line.article-header > .text-block.prompt {
+    width: 80px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+#article-content-panel > div > .line.article-header > .text-block.value {
+    padding-right: 20px;
+}
+
+#article-content-panel > div > .line.article-header > .text-block.right {
+    float: right;
+}
+
+.push {
+    width: 25px;
+    text-align: center;
+    padding-right: 20px;
+}
+
+#article-content-panel > div > .line > .date {
+    float: right;
+}
+
+#article-content-panel > div > .line > .time {
+    float: right;
+}
+

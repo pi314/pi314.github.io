@@ -1,52 +1,31 @@
-html, body {
-    background:black;
-    color:white;
-    font-size:25px;
-    font-family:consolas, monaco;
-    overflow:hidden;
-    margin:0px;
+body {
+    background: black;
+    color: lightgray;
+    font-size: 25px;
+    font-family: consolas, monaco, monospace;
+    padding: 0;
+    margin: 0;
 }
 
 .line {
-    font-size:25px;
+    font-size: 0px;
 }
 
-.container {
-    font-size:0px;
-}
-
-.text_block {
-    font-size:25px;
+.text-block {
+    display: inline-block;
+    white-space: pre;
+    font-size: 25px;
 }
 
 #wrapper {
-    max-width:1024px;
-    margin:8px auto;
+    max-width: 1024px;
+    margin: 8px auto 30px;
 }
 
-.text_block {
-    display:inline-block;
+.hidden {
+    display: none;
 }
 
-#board_master {
-    float:left;
-    background:lightgray;
-    color:black;
-}
-
-#board_title {
-    display:block;
-    background:#007f7f;
-    color:yellow;
-    text-align:center;
-}
-
-#board_name {
-    float:right;
-    background:lightgray;
-    color:black;
-}
-
-#operations {
-    color:gray;
+.show {
+    display: block;
 }

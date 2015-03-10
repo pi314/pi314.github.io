@@ -1,3 +1,10 @@
+:like:  true
+:date:  2012/08/01
+:week:  Wed
+:time:  17:50
+:sign:  hualien
+:title: [作品] 串珠
+
 從東方系列的某作
 裡面魔理沙的特色做出來的
 

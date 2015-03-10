@@ -1,0 +1,44 @@
+#board-master {
+    float: left;
+}
+
+#board-title {
+    display: block;
+    text-align: center;
+}
+
+#board-name {
+    float: right;
+}
+
+.index {
+    text-align: right;
+    padding-left: 10px;
+    padding-right: 20px;
+    width: 60px;
+}
+
+.like {
+    width: 35px;
+}
+
+.pushes {
+    width: 35px;
+}
+
+.date {
+    width: 76px;
+    padding-right: 20px;
+}
+
+.author {
+    width: 120px;
+}
+
+.article-title {
+}
+
+.re {
+    width: 45px;
+}
+

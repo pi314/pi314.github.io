@@ -1,3 +1,10 @@
+:like:  true
+:date:  2012/07/31
+:time:  16:25
+:week:  Tue
+:sign:  hualien
+:title: [遊戲] 貪吃蛇III 修改第二版
+
 貪吃蛇 3.2
 把 AI 稍微加強
 也從別的作品取材，對畫面作了設計

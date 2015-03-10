@@ -1,3 +1,10 @@
+:like:  false
+:date:  2012/08/02
+:week:  Thu
+:time:  17:28
+:sign:  hualien
+:title: [程式] Mouse Board
+
 據說 Windows 裡面有內建一個功能
 可以用鍵盤控制滑鼠
 

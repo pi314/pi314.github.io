@@ -1,13 +1,5 @@
 /*
-Black
-Red
-Green
-Yellow
-Navy
-Purple
-Cyan
-White
-Orange
+Black Red Green Yellow Navy Purple Cyan White Orange
 */
 
 /* foreground */
@@ -31,7 +23,6 @@ Orange
 .fW { color:white; }
 .fO { color:orange; }
 
-
 /* background */
 .bb { background:rgb(  0,   0,   0); }
 .br { background:rgb(127,   0,   0); }
@@ -40,7 +31,7 @@ Orange
 .bn { background:rgb(  0,   0, 127); } 
 .bp { background:rgb(127,   0, 127); }
 .bc { background:rgb(  0, 127, 127); }
-.bw { background:rgb(127, 127, 127); }
+.bw { background:lightgray; }
 .bo { background:rgb(127,  64,   0); }
 
 .bB { background:black; }
@@ -53,7 +44,17 @@ Orange
 .bW { background:white; }
 .bO { background:orange; }
 
-.plain {
-    color:lightgray;
-    background:black;
+.focused {
+    color: lightgray;
+    background: purple;
+    cursor: pointer;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
