@@ -1,5 +1,6 @@
 var ST_LIST = 'LIST';
 var ST_ARTICLE = 'ARTICLE';
+var ST_WAITING = 'WAITING';
 
 var StateMachine = { };
 var last_readed = 0;
@@ -9,6 +10,9 @@ StateMachine.state = '';
 
 StateMachine.state_init = function () {
     StateMachine.state = ST_LIST;
+    if (window.location.hash != '') {
+        StateMachine.state = ST_WAITING;
+    }
 };
 
 StateMachine.enter_article = function (index) {
@@ -57,6 +61,7 @@ StateMachine.enter_article = function (index) {
     }
     scroll_top = $('body').scrollTop();
     $('body').scrollTop(0);
+    window.location.hash = ARTICLE_FILES_LIST[index];
 
 };
 
@@ -67,5 +72,6 @@ StateMachine.leave_article = function () {
     $('#article-content-panel > div').addClass('hidden');
     $('body').scrollTop(scroll_top);
     console.log('leave article');
+    window.location.hash = '';
 };
 

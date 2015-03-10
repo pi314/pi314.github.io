@@ -99,6 +99,11 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
     };
     articles_info[index]['readed'] = t[ article_info['like'] ];
 
+    console.log(StateMachine.state);
+    if (StateMachine.state == ST_WAITING && window.location.hash == '#'+ ARTICLE_FILES_LIST[index]) {
+        StateMachine.enter_article(index);
+    }
+
     ArticleContentManager.add_pushes(index, article_info['push']);
 
 };
