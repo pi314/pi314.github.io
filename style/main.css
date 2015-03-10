@@ -19,7 +19,7 @@ body {
 
 #wrapper {
     max-width: 1024px;
-    margin: 8px auto;
+    margin: 8px auto 30px;
 }
 
 .hidden {
