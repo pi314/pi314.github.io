@@ -70,8 +70,8 @@ StateMachine.leave_article = function () {
     $('#articles-list-panel').removeClass('hidden');
     $('#article-content-panel').addClass('hidden');
     $('#article-content-panel > div').addClass('hidden');
+    window.location.hash = '';
     $('body').scrollTop(scroll_top);
     console.log('leave article');
-    window.location.hash = '';
 };
 
