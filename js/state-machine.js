@@ -66,6 +66,7 @@ StateMachine.enter_article = function (index) {
 };
 
 StateMachine.leave_article = function () {
+    if (StateMachine.state == ST_LIST) { return; }
     StateMachine.state = ST_LIST;
     $('#articles-list-panel').removeClass('hidden');
     $('#article-content-panel').addClass('hidden');
