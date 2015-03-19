@@ -1,4 +1,4 @@
 Working
 *.sw[op]
-Game/Universe/*
-Game/wVim2/*
+Game/Universe
+Game/wVim2
