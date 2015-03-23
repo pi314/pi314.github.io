@@ -1,0 +1,24 @@
+:like:  true
+:date:  2015/03/23
+:week:  Tue
+:time:  16:55
+:sign:  nctu
+:title: [更新] Universe1.4 - Escher's Knot
+
+在 Universe 寫好不久後，我就一直很想做出一個形狀：
+
+有用繩子打過結嗎？
+
+最小最小的形狀像愛心的那種結，如果把繩頭繩尾連在一起，就會形成那個形狀
+
+這叫做 Escher's Knot，繩子繞完整個環會旋轉 720 度
+也是數學上打一個結所需要的最少繞行角度
+
+它的正式名稱似乎叫 Trefoil Knot
+http://en.wikipedia.org/wiki/Trefoil_knot
+
+前幾天我終於寫出它的方程式了，覺得開心，雖然我的方程式比 Wiki 上寫的複雜許多
+
+總之它加入我的新形狀啦
+
+`Universe1.4 <./Game/Universe/universe1.4.html>`_
