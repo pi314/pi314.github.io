@@ -16,7 +16,7 @@ int main () {
         "    }}",
         "    return 0;",
         "}}",
-        "#/usr/bin/env python",
+        "#!/usr/bin/env python",
         "code = [",
         "]",
         "for i in code[1:4]:",
