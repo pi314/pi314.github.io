@@ -19,11 +19,11 @@ int main () {
         "code = [",
         "]",
         "for i in code[1:5]:",
-        "    print i",
+        "    print(i)",
         "for i in code:",
-        "    print code[0]+code[0]+chr(34)+i+chr(34)+','",
+        "    print(code[0]+code[0]+chr(34)+i+chr(34)+',')",
         "for i in code[5:14]:",
-        "    print i",
+        "    print(i)",
     };
     cout << code[14] << endl;
     for (int a = 0; a < 22; a++) {
