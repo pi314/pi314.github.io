@@ -42,3 +42,8 @@
 --
 想看提示的話, 這裡有個 wiki 頁面
 http://en.wikipedia.org/wiki/Quine_(computing)
+
+--
+2015/03/27 03:50
+`php 的 quine <Game/quine/quine.php>`_ (跟上面 C 的版本幾乎一樣)
+`C -> PHP -> Python 的 Relay Quine <Game/quine/c-php-python-relay-quine.c>`_
