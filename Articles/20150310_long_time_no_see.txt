@@ -23,7 +23,7 @@
 覺得開心
 
 --
-第二個是 `Universe1.3 <Game/Universe/universe1.3.html>`_
+第二個是 `Universe1.3 </universe/universe1.3.html>`_
 這是我一直都很喜歡的作品，2012 年寫好第一版，沒想到之後又改了好幾次
 其實我不太確定 1.3 和 1.2 差在哪，就先這樣吧
 

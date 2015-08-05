@@ -41,7 +41,7 @@
 
 Universe 其實在今年的 5 月有更新成 1.2
 
-<a href="./Game/Universe/universe1.2.html" target="_blank">universe1.2</a>
+<a href="/universe/universe1.2.html" target="_blank">universe1.2</a>
 
 只是小更新，增加了滑鼠的感應面積而已
 

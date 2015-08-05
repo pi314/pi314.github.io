@@ -21,4 +21,4 @@ http://en.wikipedia.org/wiki/Trefoil_knot
 
 總之它加入我的新形狀啦
 
-`Universe1.4 <./Game/Universe/universe1.4.html>`_
+`Universe1.4 </universe/universe1.4.html>`_

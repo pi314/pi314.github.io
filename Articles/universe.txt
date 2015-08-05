@@ -6,7 +6,7 @@
 :title: [作品] Universe
 :push:  universe_p.txt
 
-新作品 <a href="./Game/Universe/universe.html" target="_blank">宇宙</a>
+新作品 <a href="/universe/universe.html" target="_blank">宇宙</a>
 
 工時一天
 
