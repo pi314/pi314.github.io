@@ -38,9 +38,9 @@ JavaScript 沒有 include 這樣的功能  所以自己寫了一個程式來做�
 開發環境是 Google Chrome  還沒有在其他瀏覽器上完整的測試過
 如果用的是 Google Chrome 的話，就真的可以存檔喔
 
-<a href="./Game/wVim2/wvim.html" target="_blank">wvim2</a>
+<a href="wvim2" target="_blank">wvim2</a>
 
-<a href="./Game/wVim2/log.txt" target="_blank">這個是工作日誌</a>  也包含目前支援的功能
+<a href="/wvim2/log.txt" target="_blank">這個是工作日誌</a>  也包含目前支援的功能
 還沒做完呢(笑  不過還是先休息一下吧
 
 
