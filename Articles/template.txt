@@ -1,0 +1,7 @@
+:like:  true
+:date:  2015/08/15
+:week:  Sat
+:time:  02:04
+:sign:  nctu
+:title: [標題] 樣板
+
