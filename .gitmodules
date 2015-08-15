@@ -1,3 +1,0 @@
-[submodule "KeyManager"]
-	path = js/KeyManager
-	url = https://github.com/pi314/KeyManager.git
