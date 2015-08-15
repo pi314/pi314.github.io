@@ -31,7 +31,7 @@ ArticleListManager.article_list_panel_init = function () {
 };
 
 ArticleListManager.article_list_panel_mouse_binding = function () {
-    
+
     $('#articles-list > .line').mouseenter(function () {
         $(this).addClass('focused');
     }).mouseleave(function () {
@@ -46,7 +46,7 @@ ArticleListManager.article_list_panel_mouse_binding = function () {
         mouse_on_widget = false;
     });
 
-    $('html').click(function () {
+    $(document).click(function () {
         if ( !mouse_on_widget ) {
             StateMachine.leave_article();
         }

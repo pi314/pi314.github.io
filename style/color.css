@@ -7,7 +7,7 @@ Black Red Green Yellow Navy Purple Cyan White Orange
 .fr { color:rgb(127,   0,   0); }
 .fg { color:rgb(  0, 127,   0); }
 .fy { color:rgb(127, 127,   0); }
-.fn { color:rgb(  0,   0, 127); } 
+.fn { color:rgb(  0,   0, 127); }
 .fp { color:rgb(127,   0, 127); }
 .fc { color:rgb(  0, 127, 127); }
 .fw { color:lightgray; }
@@ -17,7 +17,7 @@ Black Red Green Yellow Navy Purple Cyan White Orange
 .fR { color:red; }
 .fG { color:lime; }
 .fY { color:yellow; }
-.fN { color:blue; } 
+.fN { color:blue; }
 .fP { color:magenta; }
 .fC { color:cyan; }
 .fW { color:white; }
@@ -28,13 +28,13 @@ Black Red Green Yellow Navy Purple Cyan White Orange
 .br { background:rgb(127,   0,   0); }
 .bg { background:rgb(  0, 127,   0); }
 .by { background:rgb(127, 127,   0); }
-.bn { background:rgb(  0,   0, 127); } 
+.bn { background:rgb(  0,   0, 127); }
 .bp { background:rgb(127,   0, 127); }
 .bc { background:rgb(  0, 127, 127); }
 .bw { background:lightgray; }
 .bo { background:rgb(127,  64,   0); }
 
-.bB { background:black; }
+.bB { background:gray; }
 .bR { background:red; }
 .bG { background:lime; }
 .bY { background:yellow; }

@@ -25,6 +25,7 @@ StateMachine.enter_article = function (index) {
     $('#articles-list-panel').addClass('hidden');
     $('#article-content-panel').removeClass('hidden');
     $('#article-content'+ index).removeClass('hidden');
+    $('#back-button').removeClass('hidden');
     switch (articles_info[index]['readed']) {
     case 'M':
         $('#article-line'+ index +' > .like').text('m');
@@ -71,6 +72,7 @@ StateMachine.leave_article = function () {
     $('#articles-list-panel').removeClass('hidden');
     $('#article-content-panel').addClass('hidden');
     $('#article-content-panel > div').addClass('hidden');
+    $('#back-button').addClass('hidden');
     window.location.hash = '';
     $('body').scrollTop(scroll_top);
     console.log('leave article');
