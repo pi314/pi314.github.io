@@ -13,6 +13,10 @@ var mouse_on_widget = false;
 var ArticleListManager = { };
 
 ArticleListManager.article_list_panel_init = function () {
+    if (StateMachine.state == ST_WAITING) {
+        ArticleContentManager.download_article(StateMachine.waiting_article_index);
+    }
+
     for (var index = 0; index < ARTICLE_FILES_LIST.length; index++) {
         filename = ARTICLE_FILES_LIST[index];
         $('#articles-list').append(

@@ -38,6 +38,10 @@ ArticleContentManager.download_article = function (index) {
 
 ArticleContentManager.handle_article_content = function (index, raw_content) {
     // the article content container
+    if (index in articles_info) {
+        return;
+    }
+
     var article_content_object = $('<div id="article-content'+ index +'" class="hidden">');
     var lines = raw_content.split(/\r?\n/g);
     var in_header = true;
@@ -99,7 +103,6 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
     };
     articles_info[index]['readed'] = t[ article_info['like'] ];
 
-    console.log(StateMachine.state);
     if (StateMachine.state == ST_WAITING && window.location.hash == '#'+ ARTICLE_FILES_LIST[index]) {
         StateMachine.enter_article(index);
     }

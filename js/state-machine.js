@@ -7,18 +7,18 @@ var last_readed = 0;
 var scroll_top = 0;
 
 StateMachine.state = '';
+StateMachine.waiting_article_index = -1;
 
 StateMachine.state_init = function () {
     StateMachine.state = ST_LIST;
     if (window.location.hash != '') {
-        StateMachine.state = ST_WAITING;
+        StateMachine.waiting_article_index = ARTICLE_FILES_LIST.indexOf(window.location.hash.replace(/^#/, ''));
+        StateMachine.state = (StateMachine.waiting_article_index == -1) ? ST_LIST : ST_WAITING;
     }
 };
 
 StateMachine.enter_article = function (index) {
-    console.log('enter article ' + index);
     if ( !(index in articles_info) ) {
-        console.log('skip article ' + index);
         return;
     }
     StateMachine.state = ST_ARTICLE;
@@ -37,6 +37,10 @@ StateMachine.enter_article = function (index) {
     articles_info[index]['readed'] = 'true';
     // uncolor all same titled articles
     for (var a = 0; a < articles_info.length; a++) {
+        if (articles_info[a] == undefined || articles_info[last_readed] == undefined) {
+            continue;
+        }
+
         if (articles_info[a]['title'] == articles_info[last_readed]['title']) {
             if (articles_info[a]['re'] == 'true') {
                 $('#article-line'+ a +' > .title').removeClass('fY');
@@ -50,6 +54,9 @@ StateMachine.enter_article = function (index) {
     last_readed = index;
     // color all same titled articles
     for (var a = 0; a < articles_info.length; a++) {
+        if (articles_info[a] == undefined || articles_info[last_readed] == undefined) {
+            continue;
+        }
         if (articles_info[a]['title'] == articles_info[last_readed]['title']) {
             if (articles_info[a]['re'] == 'true') {
                 $('#article-line'+ a +' > .title').addClass('fY');
@@ -75,6 +82,5 @@ StateMachine.leave_article = function () {
     $('#back-button').addClass('hidden');
     window.location.hash = '';
     $('body').scrollTop(scroll_top);
-    console.log('leave article');
 };
 
