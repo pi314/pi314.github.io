@@ -1,0 +1,39 @@
+:like:  true
+:date:  2015/08/17
+:week:  Mon
+:time:  01:35
+:sign:  nctu
+:title: [閒聊] 關於我
+
+這裡是我的作品集，紀錄我學習程式的腳印
+
+高一第一次接觸 C 語言，大二第一次接觸 FreeBSD/GNU Linux
+讓我知道世界上除了 Windows 和 DevC++ 4.9.9.2 以外還有很多很多的東西
+
+寫過一些語言，不過大部份就只是碰碰，也沒機會用到
+BrainFuck C C++ Haskell Java JavaScript ML
+PHP Perl Python Scheme Shell Script VimL
+
+喜歡 Vim
+喜歡 Python
+喜歡 Shell Script
+喜歡 HTML/SVG/CSS/JavaScript
+喜歡 reStructuredText
+
+喜歡設定自己日常會用到的環境
+會因為把 zsh prompt 調得漂漂亮亮的而興奮起來
+會因為修好自己寫的 Vim Plugin 的 bug 而沾沾自喜
+
+我的 Github 主頁：https://github.com/pi314
+
+個人最喜歡的作品：`Universe </universe/universe1.4.html>`_[;
+
+我的筆記：https://github.com/pi314/pi314.notes
+
+喜歡 SCP Foundation：https://github.com/pi314/scp-foundation
+
+偶爾會畫畫 Ascii 圖：https://github.com/pi314/ascii-arts
+
+--
+
+還有什麼想知道的嗎？

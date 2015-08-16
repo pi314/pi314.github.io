@@ -1,4 +1,5 @@
 var ARTICLE_FILES_LIST = [
+"autobiography.txt",
 "snake3.txt",
 "snake3.2.txt",
 "snake4.6.txt",
