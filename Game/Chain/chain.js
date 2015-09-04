@@ -25,7 +25,7 @@ $(function () {
     }
     str += '<div id="head"></div>';
     $('#wrapper').append(str);
-    
+
     /*
     //color
     $('.ball').map(function (index, elem) {
@@ -33,7 +33,7 @@ $(function () {
         element.css({'background':color[index%(color.length)]});
     });
     */
-    
+
     positionx = new Array(recordLength);
     positiony = new Array(recordLength);
     for (var a = 0; a < recordLength; a++) {
@@ -73,8 +73,8 @@ function isMoving () {
     var movingKey = ['left', 'up', 'right', 'down'];
     var l = movingKey.length;
     var r = false;
-    for (var a in movingKey.set())
-        r = r || keyStat[a];
+    for (var a in movingKey)
+        r = r || keyStat[movingKey[a]];
     return r;
 }
 function move () {
@@ -181,7 +181,7 @@ function keyup (k) {
     if (!keyStat[k])
         return;
     keyStat[k] = false;
-    
+
     switch (k) {
         case 'left'://left
             vx += unit;
@@ -218,12 +218,12 @@ function addBall () {
     balls++;
     var oldLength = recordLength;
     recordLength = balls*posRef+1;
-    
+
     for (var a = 0; a < posRef; a++) {
         positionx.push(0);
         positiony.push(0);
     }
-    
+
     var lastx = ballx.last();
     var lasty = bally.last();
     ballx.push(lastx);
@@ -240,12 +240,12 @@ function removeBall () {
     balls--;
     var oldLength = recordLength;
     recordLength = balls*posRef+1;
-    
+
     for (var a = 0; a < posRef; a++) {
         positionx.pop();
         positiony.pop();
     }
-    
+
     ballx.pop();
     bally.pop();
     $($('.ball')[balls-1]).remove();
