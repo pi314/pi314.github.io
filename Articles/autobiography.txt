@@ -12,7 +12,7 @@
 
 寫過一些語言，不過大部份就只是碰碰，也沒機會用到
 BrainFuck C C++ Haskell Java JavaScript ML
-PHP Perl Python Scheme Shell Script VimL
+PHP Perl Python Scheme ShellScript VimL
 
 喜歡 Vim
 喜歡 Python
