@@ -1,7 +1,7 @@
 var WEEK_COLOR = {
     "Mon": "fG",
     "Tue": "fY",
-    "Wed": "fL",
+    "Wed": "fN",
     "Thu": "fP",
     "Fri": "fC",
     "Sat": "fW",
