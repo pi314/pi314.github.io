@@ -60,7 +60,7 @@ ArticleContentManager.handle_article_content = function (index, raw_content) {
     for (var l = 0; l < lines.length; l++) {
         if (in_header) {
             // still in article header
-            if ( lines[l] == '' ) {
+            if (lines[l] == '') {
                 in_header = false;
             }
 
@@ -150,11 +150,14 @@ ArticleContentManager.add_line = function (article_content_object, line_content)
     }
 
     // replace color codes: [XY; -> class="fX bY"
+    // stroke: [XY-; -> class="fX bY stroke"
     line_content = line_content.replace(
-        /\[([brgynpcwoBRGYNPCWO])([brgynpcwoBRGYNPCWO]);/g,
-        '<div class="text-block f$1 b$2">');
+        /\[([brgynpcwoBRGYNPCWO])([brgynpcwoBRGYNPCWO])(-?);/g,
+        function (match, g1, g2, g3) {
+            return '<div class="text-block f'+ g1 +' b'+ g2 +' '+ (g3 == '' ? '' : 'stroke') +'">';
+        });
     line_content = line_content.replace(/\[;/g, '</div>');
-    // hyper links, not accuvote but I think it's enough
+    // hyper links, not accurate but I think it's enough
     line_content = line_content.replace(/(^|[^"<])(https?:\/\/[^ ]*)(?![">])/g, '$1<a href="$2" target="_blank">$2</a>');
     line_content = line_content.replace(/`([^`]*) +<([^`]*)>`_/g, '<a href="$2" target="_blank">$1</a>');
     article_content_object.append('<div class="line"><div class="text-block">'+ line_content +'</div></div>');

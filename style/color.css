@@ -2,6 +2,8 @@
 Black Red Green Yellow Navy Purple Cyan White Orange
 */
 
+/* stroke */
+
 /* foreground */
 .fb { color:rgb(  0,   0,   0); }
 .fr { color:rgb(127,   0,   0); }
@@ -57,4 +59,8 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.stroke {
+    text-decoration: line-through;
 }
