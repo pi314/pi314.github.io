@@ -26,7 +26,7 @@ PHP Perl Python Scheme ShellScript VimL
 
 我的 Github 主頁：https://github.com/pi314
 
-個人最喜歡的作品：`Universe </universe/universe1.4.html>`_[;
+個人最喜歡的作品：`Universe </universe/universe1.4.html>`_ 、 `Forward </forward/index.html>`_
 
 我的筆記：https://github.com/pi314/pi314.notes
 
