@@ -1,7 +1,12 @@
 #/* <?php echo "Hello PHP *".'/'."#\n"; exit(); ?>*/
-#include <stdio.h> // \
+#ifdef __cplusplus // \
 'echo' "Hello shell" ; exit ; import sys
-#define p(hello, lang) printf(hello " " lang "\n"); // \
+#include <iostream>
+#define p(hello, lang) std::cout << hello << " " << lang << "++" << std::endl;
+#else
+#include <stdio.h>
+#define p(hello, lang) printf(hello " " lang "\n");
+#endif // \
 dummy, LANG, rtn = ('''
 int main () //''', 'Python{}'.format(sys.version_info.major), lambda n:n)
 #define LANG "C" // \
