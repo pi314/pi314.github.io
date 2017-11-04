@@ -1,0 +1,17 @@
+<html>
+<head>
+<script>
+function repr (n, x) {return n + ' = ' + JSON.stringify(x)}
+function main () {
+s1 = ["<html>","<head>","<script>","function repr (n, x) {return n + ' = ' + JSON.stringify(x)}","function main () {"]
+s2 = ["}","</script",">","</head>","<body onload=main()>","<pre id=target></pre>","</body>","</html>"]
+s3 = "document.getElementById('target').innerText = s1.concat([repr('s1', s1), repr('s2', s2), repr('s3', s3), s3]).concat(s2).join(String.fromCharCode(10))"
+document.getElementById('target').innerText = s1.concat([repr('s1', s1), repr('s2', s2), repr('s3', s3), s3]).concat(s2).join(String.fromCharCode(10))
+}
+</script
+>
+</head>
+<body onload=main()>
+<pre id=target></pre>
+</body>
+</html>
