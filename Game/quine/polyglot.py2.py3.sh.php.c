@@ -1,3 +1,4 @@
+#/* <?php echo "Hello PHP *".'/'."#\n"; exit(); ?>*/
 #include <stdio.h> // \
 'echo' "Hello shell" ; exit ; import sys
 #define p(hello, lang) printf(hello " " lang "\n"); // \
