@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: black;
+    font-family: consolas, monaco, monospace;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    cursor: default;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+}
+
+#sample {
+    color: black;
+}
+
+.flow {
+    position: fixed;
+    margin: 0;
+    font-size: 15px;
+}
+
+.spark {
+    position: fixed;
+    margin: 0;
+    font-size: 15px;
+    color: green;
+}
+
+.bright {
+    color: lime;
+}
+
+.dark {
+    color: green;
+}
+
+.bright.gold {
+    font-weight: bold;
+    color: #FFFF00;
+}
+
+.dark.gold {
+    font-weight: bold;
+    color: #FFFF00;
+}
+
+.hidden {
+    display: none;
+}

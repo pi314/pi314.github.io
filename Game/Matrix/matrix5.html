@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Matrix 5</title>
+    <link rel="stylesheet" href="matrix5.css">
+    <script src="../../js/jquery-latest.js"></script>
+    <script src="vue.js"></script>
+    <script src="matrix5.js"></script>
+  </head>
+  <body onload="main();">
+    <div id="app" @click="click" @mousemove="mousemove">
+      <span id="sample">M</span>
+      <pre v-for="flow in flows"
+           :style="flow.pos()"
+           :class="flow.cls()"
+           class="flow">{{ flow.text() }}</pre>
+      <span v-for="spark in sparks"
+            :style="spark.pos()"
+            class="spark">{{ spark.chr }}</span>
+    </div>
+  </body>
+</html>
