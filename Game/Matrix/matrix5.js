@@ -3,8 +3,8 @@ var MAX_FLOWS_NUM = 50;
 var TEXT_WIDTH = 0;
 var TEXT_HEIGHT = 0;
 
-var mouse_x = 0;
-var mouse_y = 0;
+var mouse_x = undefined;
+var mouse_y = undefined;
 
 
 function main () {
@@ -134,18 +134,23 @@ function spark (x, y, delay) {
 
     this.step = function () {
         if (!this.chase) {
+            var mx = (mouse_x === undefined) ? this.x : mouse_x;
+            var my = (mouse_y === undefined) ? this.y : mouse_y;
             this.progress += 1;
             this.x += this.vx;
             this.y += this.vy;
-            var d = Math.sqrt(Math.pow(mouse_x - this.x, 2) + Math.pow(mouse_y - this.y, 2));
-            this.vx = this.vx / 1.1 + (mouse_x - this.x) / d;
-            this.vy = this.vy / 1.1 + (mouse_y - this.y) / d;
+            var d = Math.sqrt(Math.pow(mx - this.x, 2) + Math.pow(my - this.y, 2));
+            this.vx = this.vx / 1.1 + (mx - this.x) / d;
+            this.vy = this.vy / 1.1 + (my - this.y) / d;
 
             if (this.progress >= 7 + this.delay) {
                 this.chase = true;
                 this.progress = 0;
             }
         } else {
+            if (mouse_x === undefined || mouse_y === undefined) {
+                return;
+            }
             this.progress += 1;
             this.x = (this.x * (7 - this.progress) + mouse_x * this.progress) / 7;
             this.y = (this.y * (7 - this.progress) + mouse_y * this.progress) / 7;
