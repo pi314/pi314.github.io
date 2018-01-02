@@ -6,3 +6,7 @@
 ※ Origin: 交大次世代(bs2.to)
 ◆ From: pi314@nctu
 :end:
+:start: hsinchu
+※ Origin: 交大次世代(bs2.to)
+◆ From: pi314@hsinchu
+:end:

@@ -1,0 +1,17 @@
+:like:  true
+:date:  2018/01/02
+:week:  Mon
+:time:  23:14
+:sign:  hsinchu
+:title: [作品] Matrix 5
+
+離上個作品居然有整整一年了呢
+整整一年沒有寫新作品
+
+這次的其實也不算新作品： `Matrix 5 <Game/Matrix/matrix5.html>`_
+
+用 Vue.js 重寫了，跨年前開始的，總工時不知道有沒有 5 個小時
+
+上次作出來的漣漪效果，其實我一直很不滿意，覺得醜醜的
+
+這次就把漣漪改成火花了，點子的來源是 http://animejs.com
