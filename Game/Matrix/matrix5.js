@@ -20,7 +20,7 @@ function main () {
                 var x = e.clientX;
                 var y = e.clientY;
                 for (var i = 0; i < 15; i++) {
-                    app.sparks.push(new spark(x, y, Math.floor(i / 5)));
+                    app.sparks.push(new spark(x, y, i));
                 }
             },
             mousemove: function (e) {
@@ -114,7 +114,7 @@ function spark (x, y, delay) {
     this.y = y;
     this.delay = Math.floor(delay);
 
-    var vr = rand_int(20, 100);
+    var vr = rand_int(20, 50);
     var vtheta = Math.random() * Math.PI * 2;
 
     this.vx = Math.cos(vtheta) * vr;
@@ -137,8 +137,9 @@ function spark (x, y, delay) {
             this.progress += 1;
             this.x += this.vx;
             this.y += this.vy;
-            this.vx = this.vx / 1.3 + sgn(mouse_x - this.x);
-            this.vy = this.vy / 1.3 + sgn(mouse_y - this.y);
+            var d = Math.sqrt(Math.pow(mouse_x - this.x, 2) + Math.pow(mouse_y - this.y, 2));
+            this.vx = this.vx / 1.1 + (mouse_x - this.x) / d;
+            this.vy = this.vy / 1.1 + (mouse_y - this.y) / d;
 
             if (this.progress >= 7 + this.delay) {
                 this.chase = true;
@@ -156,11 +157,6 @@ function spark (x, y, delay) {
     };
 
     this.chr = rand_char();
-}
-
-
-function dist (x, y) {
-    return ;
 }
 
 
