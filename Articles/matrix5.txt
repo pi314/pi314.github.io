@@ -15,3 +15,6 @@
 上次作出來的漣漪效果，其實我一直很不滿意，覺得醜醜的
 
 這次就把漣漪改成火花了，點子的來源是 http://animejs.com
+
+Update:
+火花的點子還有一個，是 Alto's Adventure
