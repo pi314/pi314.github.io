@@ -1,15 +1,22 @@
-var FRAME_DELAY = 70;
+var FRAME_DELAY_MIN = 70;
+var FRAME_DELAY_MAX = 100;
 var MAX_FLOWS_NUM = 50;
 var TEXT_WIDTH = 0;
 var TEXT_HEIGHT = 0;
+var SPARK_PER_CLICK = 15;
 
 var mouse_x = undefined;
 var mouse_y = undefined;
+
+var timestamp = [];
+var overload = false;
 
 
 function main () {
     TEXT_WIDTH = $('#sample').width();
     TEXT_HEIGHT = $('#sample').height();
+
+    timestamp = [Date.now(), Date.now()]
 
     var app = new Vue({
         el: '#app',
@@ -19,8 +26,11 @@ function main () {
             click: function (e) {
                 var x = e.clientX;
                 var y = e.clientY;
-                for (var i = 0; i < 15; i++) {
-                    app.sparks.push(new spark(x, y, i));
+                var no_spark = (app.sparks.length == 0);
+                for (var i = 0; i < SPARK_PER_CLICK; i++) {
+                    if (!overload || no_spark) {
+                        app.sparks.push(new spark(x, y, i));
+                    }
                 }
             },
             mousemove: function (e) {
@@ -32,12 +42,16 @@ function main () {
 
     setTimeout(function () {
         next_frame(app);
-    }, FRAME_DELAY);
+    }, FRAME_DELAY_MIN);
 }
 
 
 function next_frame (app) {
-    if (app.flows.length < MAX_FLOWS_NUM) {
+    timestamp = [timestamp[1], Date.now()];
+    overload = ((timestamp[1] - timestamp[0]) > FRAME_DELAY_MAX);
+    console.log(timestamp[1] - timestamp[0], overload, app.flows.length, MAX_FLOWS_NUM);
+
+    if (app.flows.length < MAX_FLOWS_NUM && !overload) {
         app.flows.push(new flow());
     }
 
@@ -53,34 +67,35 @@ function next_frame (app) {
         return s.valid;
     });
 
+    app.flows = app.flows.filter(function (f) {
+        return f.valid;
+    });
+
+    if (overload) {
+        MAX_FLOWS_NUM = Math.max(1, MAX_FLOWS_NUM - 1);
+    } else if (app.flows.length == MAX_FLOWS_NUM) {
+        MAX_FLOWS_NUM += 1;
+    }
+
     setTimeout(function () {
         next_frame(app);
-    }, FRAME_DELAY);
+    }, FRAME_DELAY_MIN);
 }
 
 
 function flow () {
-    this.top = 0;
-    this.left = 0;
-    this.data = '';
-    this.cursor = 0;
-    this.len = 0;
-    this.dark = false;
-    this.gold = false;
-
-    this.restart = function () {
-        this.top = rand_top();
-        this.left = rand_left();
-        this.len = Math.floor((rand_bot() - this.top) / TEXT_HEIGHT) + 5;
-        this.data = ' '.repeat(this.len);
-        var rl = rand_dlen();
-        for (var i = 0; i < rl; i++) {
-            this.data += rand_char();
-        }
-        this.cursor = this.data.length - 1;
-        this.dark = rand_dark();
-        this.gold = rand_gold();
-    };
+    this.top = rand_top();
+    this.left = rand_left();
+    this.len = Math.floor((rand_bot() - this.top) / TEXT_HEIGHT) + 5;
+    this.data = ' '.repeat(this.len);
+    var rl = rand_dlen();
+    for (var i = 0; i < rl; i++) {
+        this.data += rand_char();
+    }
+    this.cursor = this.data.length - 1;
+    this.dark = rand_dark();
+    this.gold = rand_gold();
+    this.valid = true;
 
     this.pos = function () {
         return {
@@ -97,15 +112,13 @@ function flow () {
         this.cursor -= 1;
 
         if (this.cursor <= 0) {
-            this.restart();
+            this.valid = false;
         }
     };
 
     this.cls = function () {
         return [(this.dark ? 'dark' : 'bright'), (this.gold ? 'gold' : '')].join(' ');
     };
-
-    this.restart();
 }
 
 
