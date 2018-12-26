@@ -28,14 +28,7 @@
 就得寫...咦?
 
 --
-因為真的很好玩, 所以我也寫了幾支,
-
-`C 語言 <./Game/quine/quine.c>`_
-`Python 語言 <./Game/quine/quine.py>`_
-`Python 語言 (另一解) <./Game/quine/quine2.py>`_
-`Shell Script <./Game/quine/quine.sh>`_
-`C 和 Python 的 quine <./Game/quine/polyglot_quine.c>`_
-`C++ 和 Python 的 quine <./Game/quine/relay_quine.cpp>`_
+因為真的很好玩, `所以我也寫了幾支 <https://github.com/pi314/pi314.github.io/tree/master/Game/quine>`_.
 
 當然過程中有看提示, 我沒那麼厲害可以自己想出來.
 
