@@ -25,4 +25,5 @@ var ARTICLE_FILES_LIST = [
 "table-maker.txt",
 "forward.txt",
 "matrix5.txt",
+"matrix6.txt",
 ];

@@ -1,0 +1,26 @@
+:like:  true
+:date:  2018/12/29
+:week:  Sat
+:time:  20:31
+:sign:  hsinchu
+:title: [作品] Matrix 6
+
+前兩天在公司的電腦裡抓了 cmatrix 來編，同事看到表示「這好好玩，我也要裝」
+https://github.com/abishekvashok/cmatrix
+
+聊著聊著提到「我也有寫過一個唷」，開了 `Matrix 5 <Game/Matrix/matrix5.html>`_ 給他看
+
+不過視覺效果比 cmatrix 差很多（雖然有煙火
+
+看著覺得很不滿意，就又決定重寫了
+
+
+上次用了 Vue.js，這次只用了 jQuery，而且[Gb;認真的[;注意了手機上的效果
+
+<a href="matrix6" target="_blank">Matrix 6</a>
+
+空白鍵是暫停/繼續
+
+滑鼠點擊也可以暫停/繼續（手機上也一樣）
+
+還放了兩個小彩蛋唷 [bb;滑鼠雙擊、鍵盤 Enter[;
