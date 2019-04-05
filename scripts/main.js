@@ -9,6 +9,9 @@ var WEEK_COLOR = {
 };
 
 
+var signatures = {};
+
+
 function Article (fname) {
     // static info
     this.fname = fname;
@@ -57,6 +60,13 @@ function Article (fname) {
                 }
             } else {
                 this.content.push(render_line(lines[i]));
+            }
+        }
+
+        this.content.push('--');
+        if (this.sign in signatures) {
+            for (i in signatures[this.sign]) {
+                this.content.push(render_line(signatures[this.sign][i]));
             }
         }
 
@@ -127,6 +137,30 @@ function render_line (line) {
 }
 
 
+function parse_signatures (raw_content) {
+    var lines = raw_content.split(/\r?\n/g);
+
+    var parsing_content = false;
+    var signature_name = '';
+    for (var i = 0; i < lines.length; i++) {
+        if (parsing_content) {
+            if (lines[i] == ':end:') {
+                parsing_content = false;
+            } else {
+                signatures[signature_name].push(lines[i]);
+            }
+        } else {
+            var match = /^:start: *(.*)$/.exec(lines[i]);
+            if (match != null) {
+                signature_name = match[1];
+                signatures[signature_name] = [];
+                parsing_content = true;
+            }
+        }
+    }
+}
+
+
 $(function () {
     var articles = [];
 
@@ -153,10 +187,12 @@ $(function () {
             view_article: function (article) {
                 article.viewing = true;
                 console.log(article.title, article.viewing);
+                window.scrollTo(0,0);
             },
             leave_article: function (article) {
                 article.viewing = false;
                 console.log(article.title, article.viewing);
+                window.scrollTo(0,0);
             },
         },
         computed: {
@@ -174,27 +210,23 @@ $(function () {
     $(document).click(function () {
         if (!render.mouse_on_widget) {
             for (var i in render.articles) {
-                render.articles[i].viewing = false;
-                console.log(render.articles[i].title, render.articles[i].viewing);
+                if (render.articles[i].viewing) {
+                    render.articles[i].viewing = false;
+                    console.log(render.articles[i].title, render.articles[i].viewing);
+                    window.scrollTo(0,0);
+                }
             }
         }
     });
 
-    download_article(articles);
+    $.ajax({
+        url: 'Articles/signatures.txt',
+        cache: false,
+    }).done(function (msg) {
+        parse_signatures(msg);
 
-    // // display state, (*)ST_LIST / ST_ARTICLE
-    // StateMachine.state_init();
-    //
-    // $.ajax({
-    //     url: 'Articles/signatures.txt',
-    //     cache: false,
-    // }).done(function (msg) {
-    //     ArticleContentManager.handle_signatures(msg);
-    //
-    //     // article contents must be fetched after the signature file
-    //     ArticleListManager.article_list_panel_init();
-    //     ArticleListManager.article_list_panel_mouse_binding();
-    // });
+        download_article(articles);
+    });
 });
 
 
