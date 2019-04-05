@@ -186,6 +186,7 @@ $(function () {
         methods: {
             view_article: function (article) {
                 article.viewing = true;
+                article.read = true;
                 console.log(article.title, article.viewing);
                 window.scrollTo(0,0);
             },
