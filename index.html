@@ -35,15 +35,15 @@
           <div class="text-block article_title">文章標題</div>
         </div>
         <div id="articles-list">
-            <div id="article-line index" class="line" v-for="article in articles">
-              <div class="text-block index">{{ article.index }}</div>
-              <div class="text-block like">?</div>
-              <div class="text-block pushes">?</div>
-              <div class="text-block date">??/??</div>
-              <div class="text-block author">pi314</div>
-              <div class="text-block re">◇</div>
-              <div class="text-block title">{{ article.fname }}</div>
-            </div>
+          <div id="article-line index" class="line" v-for="article in articles">
+            <div class="text-block index">{{ article.index }}</div>
+            <div class="text-block like" :class="article.like ? 'fC' : ''">{{ article.like ? (article.read ? 'm' : 'M') : (article.read ? '' : '+') }}</div>
+            <div class="text-block pushes">?</div>
+            <div class="text-block date" :class="WEEK_COLOR[article.week]">{{ article.date.substring(5) }}</div>
+            <div class="text-block author">pi314</div>
+            <div class="text-block re">{{ article.re ? 'Re' : '◇' }}</div>
+            <div class="text-block title">{{ article.title }}</div>
+          </div>
         </div>
       </div>
 
