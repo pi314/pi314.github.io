@@ -163,6 +163,7 @@ function parse_signatures (raw_content) {
 
 $(function () {
     var articles = [];
+    var scroll_top = 0;
 
     for (var i = 0; i < ARTICLE_FILES_LIST.length; i++) {
         var atc = new Article(ARTICLE_FILES_LIST[i]);
@@ -190,12 +191,19 @@ $(function () {
                 article.read = true;
                 this.lvt = article.title;
                 console.log(article.title, article.viewing);
-                window.scrollTo(0,0);
+
+                scroll_top = $('body').scrollTop();
+                $('body').scrollTop(0);
+                window.location.hash = article.fname;
             },
             leave_article: function (article) {
                 article.viewing = false;
                 console.log(article.title, article.viewing);
-                window.scrollTo(0,0);
+
+                this.$nextTick(function () {
+                    $('body').scrollTop(scroll_top);
+                })
+                window.location.hash = '';
             },
         },
         computed: {
@@ -214,9 +222,7 @@ $(function () {
         if (!render.mouse_on_widget) {
             for (var i in render.articles) {
                 if (render.articles[i].viewing) {
-                    render.articles[i].viewing = false;
-                    console.log(render.articles[i].title, render.articles[i].viewing);
-                    window.scrollTo(0,0);
+                    render.leave_article(render.articles[i]);
                 }
             }
         }
