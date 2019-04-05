@@ -182,11 +182,13 @@ $(function () {
             WEEK_COLOR: WEEK_COLOR,
             articles: articles,
             mouse_on_widget: true,
+            lvt: '',
         },
         methods: {
             view_article: function (article) {
                 article.viewing = true;
                 article.read = true;
+                this.lvt = article.title;
                 console.log(article.title, article.viewing);
                 window.scrollTo(0,0);
             },

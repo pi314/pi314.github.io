@@ -41,8 +41,13 @@
             <div class="text-block pushes">?</div>
             <div class="text-block date" :class="WEEK_COLOR[article.week]">{{ article.date.substring(5) }}</div>
             <div class="text-block author">pi314</div>
-            <div class="text-block re">{{ article.re ? 'Re' : '◇' }}</div>
-            <div class="text-block title">{{ article.title }}</div>
+            <div class="text-block re" v-if="lvt != article.title">{{ article.re ? 'Re' : '◇' }}</div>
+            <div class="text-block title" v-if="lvt != article.title">{{ article.title }}</div>
+
+            <span v-if="lvt == article.title">
+              <div class="text-block re" :class="article.re ? 'fY' : 'fG'">{{ article.re ? '=>' : '◇' }}</div>
+              <div class="text-block title" :class="article.re ? 'fY' : 'fG'">{{ article.title }}</div>
+            </span>
           </div>
         </div>
       </div>
