@@ -22,15 +22,17 @@ function Article (fname) {
     this.week = '?';
     this.sign = '';
     this.title = this.fname;
-    this.push = [];
+    this.push = '';
     this.re = false;
     this.raw_content = '';
     this.content = [];
+    this.content_push = [];
 
     // dynamic info
     this.loaded = false;
     this.read = false;
     this.viewing = false;
+    this.pushes = NaN;
 
     this.parse = function (raw_content) {
         this.raw_content = raw_content;
@@ -70,6 +72,37 @@ function Article (fname) {
             }
         }
 
+        if (this.push) {
+            (function (me) {
+                $.ajax({
+                    url: 'Articles/'+ me.push,
+                    cache: false,
+                }).done(function (raw_content) {
+                    var lines = raw_content.split(/\r?\n/g);
+                    me.pushes = 0;
+                    for (var i = 0; i < lines.length; i++) {
+                        var match = /^([-^v])[0-9?]{4}\/([0-9?]{2}\/[0-9?]{2})-([0-9?]{2}:[0-9?]{2})\|(.*)$/.exec(lines[i]);
+                        if (match == null) {
+                            continue;
+                        }
+                        var pflag = match[1];
+
+                        var pinfo = {};
+                        pinfo['score'] = pflag;
+                        pinfo['author'] = 'pi314';
+                        pinfo['text'] = match[4];
+                        pinfo['date'] = match[2];
+                        pinfo['time'] = match[3];
+
+                        me.content_push.push(pinfo);
+                        me.pushes += {'^':1, '-':0, 'v':-1}[pflag];
+                    }
+                });
+            })(this);
+        } else {
+            this.pushes = 'no';
+        }
+
         this.loaded = true;
     }
 }
@@ -85,7 +118,6 @@ function render_line (line) {
     } else if (line[0] == '※') {
         line = '[gb;' + line;
     }
-
 
     var regex = /\[(?:([brgynpcwoBRGYNPCWO])([brgynpcwoBRGYNPCWO])(-?))?;/;
     var tokens = []
@@ -172,7 +204,6 @@ $(function () {
 
         if (window.location.hash == '#' + atc.fname) {
             atc.viewing = true;
-            console.log(atc.fname);
         }
     }
 

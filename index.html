@@ -38,7 +38,9 @@
           <div id="article-line index" class="line" v-for="article in articles" @click="view_article(article)">
             <div class="text-block index">{{ article.index }}</div>
             <div class="text-block like" :class="article.like ? 'fC' : ''">{{ article.like ? (article.read ? 'm' : 'M') : (article.read ? '' : '+') }}</div>
-            <div class="text-block pushes">?</div>
+            <div class="text-block pushes" v-if="article.pushes === 'no'"></div>
+            <div class="text-block pushes" v-else-if="isNaN(article.pushes)">?</div>
+            <div class="text-block pushes" v-else :class="article.pushes < 0 ? 'fB' : 'fY'">{{ article.pushes }}</div>
             <div class="text-block date" :class="WEEK_COLOR[article.week]">{{ article.date.substring(5) }}</div>
             <div class="text-block author">pi314</div>
             <div class="text-block re" v-if="lvt != article.title">{{ article.re ? 'Re' : '◇' }}</div>
@@ -69,10 +71,15 @@
             <div class="text-block value">{{ article.date }} {{ article.week }} {{ article.time }}</div>
           </div>
           <br>
-          <div>
-            <div class="line" v-for="line in article.content">
-              <div class="text-block" v-html="line"></div>
-            </div>
+          <div class="line" v-for="line in article.content">
+            <div class="text-block" v-html="line"></div>
+          </div>
+          <div class="line" v-for="pinfo in article.content_push">
+            <div class="text-block push" :class="{'^':'fW', '-':'fy', 'v':'fW'}[pinfo['score']]">{{ {'^':'推','-':'→','v':'噓'}[pinfo['score']] }}</div>
+            <div class="text-block fY">{{ pinfo['author'] }}</div>
+            <div class="text-block fy">：{{ pinfo['text'] }}</div>
+            <div class="text-block time fw">{{ pinfo['time'] }}</div>
+            <div class="text-block date fw">{{ pinfo['date'] }}</div>
           </div>
           <br>
           <div class="back_to_list fB bb" @click="leave_article(article)">[按此回到文章列表]</div>
