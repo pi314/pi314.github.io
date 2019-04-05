@@ -65,7 +65,9 @@
           </div>
           <br>
           <div>
-            {{ article.raw_content }}
+            <div class="line" v-for="line in article.content">
+              <div class="text-block" v-html="line"></div>
+            </div>
           </div>
         </div>
       </div>

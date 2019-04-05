@@ -25,6 +25,7 @@ function Article (fname) {
     this.push = [];
     this.re = false;
     this.raw_content = '';
+    this.content = [];
 
     // dynamic info
     this.loaded = false;
@@ -36,14 +37,14 @@ function Article (fname) {
         var lines = raw_content.split(/\r?\n/g);
         var in_header = true;
 
-        for (var l = 0; l < lines.length; l++) {
+        for (var i = 0; i < lines.length; i++) {
             if (in_header) {
                 // still in article header
-                if (lines[l] == '') {
+                if (lines[i] == '') {
                     in_header = false;
                 }
 
-                var match = /^:(.*?): *(.*)$/.exec(lines[l]);
+                var match = /^:(.*?): *(.*)$/.exec(lines[i]);
                 if (match == null) {
                     in_header = false;
                     continue;
@@ -56,15 +57,75 @@ function Article (fname) {
                     default:
                     this[match[1]] = match[2];
                 }
-
-                if (in_header == false) {
-                }
-                continue;
+            } else {
+                this.content.push(render_line(lines[i]));
             }
         }
 
         this.loaded = true;
     }
+}
+
+
+function render_line (line) {
+    if (line == '') {
+        return '<br>';
+    }
+
+    if (line[0] == '>') {
+        line = '[cb;' + line;
+    } else if (line[0] == '※') {
+        line = '[gb;' + line;
+    }
+
+
+    var regex = /\[(?:([brgynpcwoBRGYNPCWO])([brgynpcwoBRGYNPCWO])(-?))?;/;
+    var tokens = []
+    while (line) {
+        var m = line.match(regex);
+        if (m) {
+            if (m.index) {
+                tokens.push(line.substring(0, m.index));
+                line = line.substring(m.index);
+            }
+            tokens.push(m[0]);
+            line = line.replace(regex, '');
+        } else {
+            tokens.push(line);
+            line = '';
+        }
+    }
+
+    var ret = '';
+    var color = false;
+    for (var i in tokens) {
+        var m = tokens[i].match(regex);
+        if (!m) {
+            var t = tokens[i];
+            t = t.replace(/(^|[^"<])(https?:\/\/[^ ]*)(?![">])/g, '$1<a href="$2" target="_blank">$2</a>');
+            t = t.replace(/`([^`]*) +<([^`]*)>`_/g, '<a href="$2" target="_blank">$1</a>');
+            ret += t;
+            continue;
+        }
+
+        if (m[0] == '[;') {
+            if (color) {
+                ret += '</div>';
+            }
+            continue;
+        }
+
+        if (color) {
+            ret += '</div>';
+        }
+        ret += '<div class="text-block f'+ m[1] +' b'+ m[2] +' '+ (m[3] == '' ? '' : 'stroke') +'">';
+        color = true;
+    }
+    if (color) {
+        ret += '</div>';
+    }
+
+    return ret;
 }
 
 
