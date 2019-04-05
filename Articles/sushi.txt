@@ -1,0 +1,22 @@
+:like:  true
+:date:  2019/04/05
+:week:  Fri
+:time:  19:39
+:sign:  hsinchu
+:title: [作品] 壽司
+
+總之昨天在吃爭鮮的時候，想到了這個點子（非業配）：以前不是寫過 `串珠2 <Game/Chain/chain2.html>`_ 嗎？
+
+乾脆把那些球球換成壽司吧，剛好 Unicode 裡面也有壽司的圖案，我不用自己畫
+
+https://pi314.github.io/sushi/
+
+URL 可以指定一些參數：
+
+* max: 壽司的數量
+* dist: 壽司之間的距離
+* speed: 游標閒置時，壽司的移動速度
+
+範例： https://pi314.github.io/sushi/?max=50&dist=50speed=1
+
+壽司！順帶一提我喜歡鮭魚的

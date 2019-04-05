@@ -26,4 +26,5 @@ var ARTICLE_FILES_LIST = [
 "forward.txt",
 "matrix5.txt",
 "matrix6.txt",
+"sushi.txt",
 ];
