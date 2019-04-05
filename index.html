@@ -10,7 +10,7 @@
     <link type="text/css" href="./styles/color.css" rel="stylesheet"/>
     <script src="./scripts/jquery-3.3.1.min.js"></script>
     <script src="./scripts/vue-v2.6.10.min.js"></script>
-    <script src="./article-files-list.js"></script>
+    <script src="./scripts/article-files-list.js"></script>
     <script src="./scripts/main.js"></script>
   </head>
   <body>
@@ -34,7 +34,17 @@
           <div class="text-block re"></div>
           <div class="text-block article_title">文章標題</div>
         </div>
-        <div id="articles-list"></div>
+        <div id="articles-list">
+            <div id="article-line index" class="line" v-for="article in articles">
+              <div class="text-block index">{{ article.index }}</div>
+              <div class="text-block like">?</div>
+              <div class="text-block pushes">?</div>
+              <div class="text-block date">??/??</div>
+              <div class="text-block author">pi314</div>
+              <div class="text-block re">◇</div>
+              <div class="text-block title">{{ article.fname }}</div>
+            </div>
+        </div>
       </div>
 
       <div id="article-content-panel" class="hidden">
