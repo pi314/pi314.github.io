@@ -24,12 +24,15 @@ function Article (fname) {
     this.title = this.fname;
     this.push = [];
     this.re = false;
+    this.raw_content = '';
 
     // dynamic info
     this.loaded = false;
     this.read = false;
 
     this.parse = function (raw_content) {
+        this.raw_content = raw_content;
+
         var lines = raw_content.split(/\r?\n/g);
         var in_header = true;
 
@@ -53,7 +56,6 @@ function Article (fname) {
                     default:
                     this[match[1]] = match[2];
                 }
-                console.log(match);
 
                 if (in_header == false) {
                 }
@@ -86,6 +88,7 @@ $(function () {
     var article_content_render = new Vue({
         el: '#article-content-panel',
         data: {
+            articles: articles,
         },
     });
 
@@ -109,7 +112,6 @@ $(function () {
 
 function download_article (articles) {
     for (var i in articles) {
-        console.log(i);
         if (!articles[i].loaded) {
             (function (idx) {
                 $.ajax({

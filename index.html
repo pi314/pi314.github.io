@@ -47,7 +47,27 @@
         </div>
       </div>
 
-      <div id="article-content-panel" class="hidden">
+      <div id="article-content-panel">
+        <div v-for="article in articles">
+          <div class="line article-header bn">
+            <div class="text-block prompt fn bw">作者</div>
+            <div class="text-block value">pi314 (圓周率)</div>
+            <div class="text-block prompt fn bw right">站內</div>
+            <div class="text-block value right">P_pi314</div>
+          </div>
+          <div class="line article-header bn">
+            <div class="text-block prompt fn bw">標題</div>
+            <div class="text-block value">{{ article.title }}</div>
+          </div>
+          <div class="line article-header bn">
+            <div class="text-block prompt fn bw">時間</div>
+            <div class="text-block value">{{ article.date }} {{ article.week }} {{ article.time }}</div>
+          </div>
+          <br>
+          <div>
+            {{ article.raw_content }}
+          </div>
+        </div>
       </div>
 
     </div>
