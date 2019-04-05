@@ -14,9 +14,9 @@
     <script src="./scripts/main.js"></script>
   </head>
   <body>
-    <div id="wrapper">
+    <div id="wrapper" @mouseenter="mouse_on_widget = true" @mouseleave="mouse_on_widget = false">
 
-      <div id="articles-list-panel">
+      <div id="articles-list-panel" :class="view_state == 'list' ? '' : 'hidden'">
         <div id="board-info" class="line">
           <div id="board-master" class="text-block fb bw">【板主：pi314】</div>
           <div id="board-name"   class="text-block fb bw">《P_pi314》</div>
@@ -35,7 +35,7 @@
           <div class="text-block article_title">文章標題</div>
         </div>
         <div id="articles-list">
-          <div id="article-line index" class="line" v-for="article in articles">
+          <div id="article-line index" class="line" v-for="article in articles" @click="view_article(article)">
             <div class="text-block index">{{ article.index }}</div>
             <div class="text-block like" :class="article.like ? 'fC' : ''">{{ article.like ? (article.read ? 'm' : 'M') : (article.read ? '' : '+') }}</div>
             <div class="text-block pushes">?</div>
@@ -47,8 +47,8 @@
         </div>
       </div>
 
-      <div id="article-content-panel">
-        <div v-for="article in articles">
+      <div id="article-content-panel" :class="view_state == 'article' ? '' : 'hidden'">
+        <div v-for="article in articles" :class="article.viewing ? '' : 'hidden'">
           <div class="line article-header bn">
             <div class="text-block prompt fn bw">作者</div>
             <div class="text-block value">pi314 (圓周率)</div>
@@ -69,10 +69,10 @@
               <div class="text-block" v-html="line"></div>
             </div>
           </div>
+          <div class="back_to_list fB bb" @click="leave_article(article)">[按此回到文章列表]</div>
         </div>
       </div>
 
     </div>
-    <span id="back-button" class="hidden">←</span>
   </body>
 </html>

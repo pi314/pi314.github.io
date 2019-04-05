@@ -1,6 +1,3 @@
-var state = 'list';
-
-
 var WEEK_COLOR = {
     'Mon': 'fG',
     'Tue': 'fY',
@@ -30,6 +27,7 @@ function Article (fname) {
     // dynamic info
     this.loaded = false;
     this.read = false;
+    this.viewing = false;
 
     this.parse = function (raw_content) {
         this.raw_content = raw_content;
@@ -136,21 +134,50 @@ $(function () {
         var atc = new Article(ARTICLE_FILES_LIST[i]);
         atc.index = i + 1;
         articles.push(atc);
+
+        if (window.location.hash == '#' + atc.fname) {
+            atc.viewing = true;
+            console.log(atc.fname);
+        }
     }
 
-    var article_list_render = new Vue({
-        el: '#articles-list-panel',
+
+    var render = new Vue({
+        el: '#wrapper',
         data: {
             WEEK_COLOR: WEEK_COLOR,
             articles: articles,
+            mouse_on_widget: true,
+        },
+        methods: {
+            view_article: function (article) {
+                article.viewing = true;
+                console.log(article.title, article.viewing);
+            },
+            leave_article: function (article) {
+                article.viewing = false;
+                console.log(article.title, article.viewing);
+            },
+        },
+        computed: {
+            view_state: function () {
+                for (var i in this.articles) {
+                    if (this.articles[i].viewing) {
+                        return 'article';
+                    }
+                }
+                return 'list';
+            }
         },
     });
 
-    var article_content_render = new Vue({
-        el: '#article-content-panel',
-        data: {
-            articles: articles,
-        },
+    $(document).click(function () {
+        if (!render.mouse_on_widget) {
+            for (var i in render.articles) {
+                render.articles[i].viewing = false;
+                console.log(render.articles[i].title, render.articles[i].viewing);
+            }
+        }
     });
 
     download_article(articles);
