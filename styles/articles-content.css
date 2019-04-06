@@ -28,23 +28,3 @@
 #article-content-panel > div > .line > .time {
     float: right;
 }
-
-#back-button {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    padding: 0 5px;
-    font-size: 40px;
-    line-height: 40px;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    background: rgb(70, 70, 70);
-    color: black;
-}
-
-#back-button:hover {
-    background: rgb(100, 100, 100);
-    cursor: pointer;
-}
