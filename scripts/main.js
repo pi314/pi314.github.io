@@ -306,5 +306,5 @@ function download_article (article, callback) {
 
 
 if (/fbclid=[^&]+/.test(window.location.href)) {
-    history.replaceState(null, '', window.location.href.replace(/[&?]fbclid=[^&]+/, ''));
+    history.replaceState(null, '', window.location.href.replace(/[&?]fbclid=[^&#]+/, ''));
 }
