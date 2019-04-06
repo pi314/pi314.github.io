@@ -207,7 +207,6 @@ $(function () {
         }
     }
 
-
     var render = new Vue({
         el: '#wrapper',
         data: {
@@ -222,6 +221,10 @@ $(function () {
                 article.read = true;
                 this.lvt = article.title;
                 console.log(article.title, article.viewing);
+
+                if (!article.loaded) {
+                    download_article(article);
+                }
 
                 scroll_top = $('body').scrollTop();
                 $('body').scrollTop(0);
@@ -264,25 +267,39 @@ $(function () {
         cache: false,
     }).done(function (msg) {
         parse_signatures(msg);
-
-        download_article(articles);
+        for (var i in articles) {
+            if (articles[i].viewing) {
+                download_article(articles[i], function () {
+                    download_all_articles(articles);
+                });
+                return;
+            }
+        }
+        download_all_articles(articles);
     });
 });
 
 
-function download_article (articles) {
+function download_all_articles (articles) {
     for (var i in articles) {
         if (!articles[i].loaded) {
-            (function (idx) {
-                $.ajax({
-                    url: 'Articles/' + articles[idx].fname,
-                    cache: false,
-                }).done(function (msg) {
-                    articles[idx].parse(msg);
-                    download_article(articles);
-                });
-            })(i);
+            download_article(articles[i], function () {
+                download_all_articles(articles);
+            });
             break;
         }
     }
+}
+
+
+function download_article (article, callback) {
+    $.ajax({
+        url: 'Articles/' + article.fname,
+        cache: false,
+    }).done(function (msg) {
+        article.parse(msg);
+        if (callback) {
+            callback();
+        }
+    });
 }
