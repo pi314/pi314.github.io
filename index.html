@@ -4,21 +4,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>作品集</title>
     <link rel="shortcut icon" href="Res/logo.png" type="image/vnd.microsoft.icon">
-    <link type="text/css" href="./style/main.css" rel="stylesheet"/>
-    <link type="text/css" href="./style/articles-list.css" rel="stylesheet"/>
-    <link type="text/css" href="./style/articles-content.css" rel="stylesheet"/>
-    <link type="text/css" href="./style/color.css" rel="stylesheet"/>
-    <script src="./js/jquery-latest.js"></script>
-    <script src="./article-files-list.js"></script>
-    <script src="./js/article-list-manager.js"></script>
-    <script src="./js/article-content-manager.js"></script>
-    <script src="./js/state-machine.js"></script>
-    <script src="./js/main.js"></script>
+    <link type="text/css" href="./styles/main.css" rel="stylesheet"/>
+    <link type="text/css" href="./styles/articles-list.css" rel="stylesheet"/>
+    <link type="text/css" href="./styles/articles-content.css" rel="stylesheet"/>
+    <link type="text/css" href="./styles/color.css" rel="stylesheet"/>
+    <script src="./scripts/jquery-3.3.1.min.js"></script>
+    <script src="./scripts/vue-v2.6.10.min.js"></script>
+    <script src="./scripts/flist.js"></script>
+    <script src="./scripts/main.js"></script>
   </head>
   <body>
-    <div id="wrapper">
+    <div id="wrapper" @mouseenter="mouse_on_widget = true" @mouseleave="mouse_on_widget = false">
 
-      <div id="articles-list-panel">
+      <div id="articles-list-panel" :class="view_state == 'list' ? '' : 'hidden'">
         <div id="board-info" class="line">
           <div id="board-master" class="text-block fb bw">【板主：pi314】</div>
           <div id="board-name"   class="text-block fb bw">《P_pi314》</div>
@@ -36,13 +34,58 @@
           <div class="text-block re"></div>
           <div class="text-block article_title">文章標題</div>
         </div>
-        <div id="articles-list"></div>
+        <div id="articles-list">
+          <div id="article-line index" class="line" v-for="article in articles" @click="view_article(article)">
+            <div class="text-block index">{{ article.index }}</div>
+            <div class="text-block like" :class="article.like ? 'fC' : ''">{{ article.like ? (article.read ? 'm' : 'M') : (article.read ? '' : '+') }}</div>
+            <div class="text-block pushes" v-if="article.pushes === 'no'"></div>
+            <div class="text-block pushes" v-else-if="isNaN(article.pushes)">?</div>
+            <div class="text-block pushes" v-else :class="article.pushes < 0 ? 'fB' : 'fY'">{{ article.pushes }}</div>
+            <div class="text-block date" :class="WEEK_COLOR[article.week]">{{ article.date.substring(5) }}</div>
+            <div class="text-block author">pi314</div>
+            <div class="text-block re" v-if="lvt != article.title">{{ article.re ? 'Re' : '◇' }}</div>
+            <div class="text-block title" v-if="lvt != article.title">{{ article.title }}</div>
+
+            <span v-if="lvt == article.title">
+              <div class="text-block re" :class="article.re ? 'fY' : 'fG'">{{ article.re ? '=>' : '◇' }}</div>
+              <div class="text-block title" :class="article.re ? 'fY' : 'fG'">{{ article.title }}</div>
+            </span>
+          </div>
+        </div>
       </div>
 
-      <div id="article-content-panel" class="hidden">
+      <div id="article-content-panel" :class="view_state == 'article' ? '' : 'hidden'">
+        <div v-for="article in articles" :class="article.viewing ? '' : 'hidden'">
+          <div class="line article-header bn">
+            <div class="text-block prompt fn bw">作者</div>
+            <div class="text-block value">pi314 (圓周率)</div>
+            <div class="text-block prompt fn bw right">站內</div>
+            <div class="text-block value right">P_pi314</div>
+          </div>
+          <div class="line article-header bn">
+            <div class="text-block prompt fn bw">標題</div>
+            <div class="text-block value">{{ article.title }}</div>
+          </div>
+          <div class="line article-header bn">
+            <div class="text-block prompt fn bw">時間</div>
+            <div class="text-block value">{{ article.date }} {{ article.week }} {{ article.time }}</div>
+          </div>
+          <br>
+          <div class="line" v-for="line in article.content">
+            <div class="text-block" v-html="line"></div>
+          </div>
+          <div class="line" v-for="pinfo in article.content_push">
+            <div class="text-block push" :class="{'^':'fW', '-':'fy', 'v':'fW'}[pinfo['score']]">{{ {'^':'推','-':'→','v':'噓'}[pinfo['score']] }}</div>
+            <div class="text-block fY">{{ pinfo['author'] }}</div>
+            <div class="text-block fy">：{{ pinfo['text'] }}</div>
+            <div class="text-block time fw">{{ pinfo['time'] }}</div>
+            <div class="text-block date fw">{{ pinfo['date'] }}</div>
+          </div>
+          <br>
+          <div class="back_to_list fB bb" @click="leave_article(article)">[按此回到文章列表]</div>
+        </div>
       </div>
 
     </div>
-    <span id="back-button" class="hidden">←</span>
   </body>
 </html>

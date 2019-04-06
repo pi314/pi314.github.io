@@ -42,3 +42,12 @@
     width: 45px;
 }
 
+#articles-list > .line:hover {
+    color: lightgray;
+    background: purple;
+    cursor: pointer;
+}
+
+.back_to_list {
+    cursor: pointer;
+}
