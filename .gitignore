@@ -1,5 +1,7 @@
 Working
 *.sw[op]
+.DS_Store
+
 universe
 wvim2
 snake6

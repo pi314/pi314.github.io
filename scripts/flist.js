@@ -27,4 +27,6 @@ var ARTICLE_FILES_LIST = [
 "matrix5.txt",
 "matrix6.txt",
 "sushi.txt",
+"forward_rewrite.txt",
 ];
+
