@@ -31,6 +31,6 @@
 
 [Cb;*[; theme_trans=0 → 設定配色之間自動切換的時間 (秒)
 
-<a href="https://pi314.github.io/matrix6/?chars=幹&themes=all&theme_trans=5" target="_blank">例如這樣</a>
+<a href="https://pi314.github.io/matrix6/?chars=哈&themes=all&theme_trans=5" target="_blank">例如這樣</a>
 
 紅色有點嚇人
