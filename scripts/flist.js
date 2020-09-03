@@ -28,5 +28,5 @@ var ARTICLE_FILES_LIST = [
 "matrix6.txt",
 "sushi.txt",
 "forward_rewrite.txt",
+"matrix6_update.txt",
 ];
-

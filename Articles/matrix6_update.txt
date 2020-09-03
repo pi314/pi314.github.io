@@ -1,0 +1,36 @@
+:like:  true
+:date:  2020/09/03
+:week:  Thr
+:time:  23:21
+:sign:  hsinchu
+:title: [作品] Matrix 6
+:re:    true
+
+心血來潮，做了點更新
+
+<a href="matrix6" target="_blank">Matrix 6</a>
+
+空白鍵可以暫停/繼續 ← 原本是立刻停下來，這次更新做了煞車和加速感
+
+滑鼠點擊也可以暫停/繼續
+
+滑鼠雙擊可以換顏色
+
+按 Enter 會觸發彩蛋 (手機上沒這功能)
+
+這次更新主要是支援英文以外的字元，還有把一些功能做進 URL 裡面：
+
+[Cb;*[; delay=70 → 調整流動的速度
+[Cb;*[; 把聖誕節彩蛋和新年彩蛋變得
+[Cb;*[; chars=字 → 設定顯示的文字
+[Cb;*[; themes=green,cyan → 設定字流的配色
+
+  [Cb;*[; green, gold, red, orange, yellow,
+  [Cb;*[; blue, cyan, magenta, white, black
+  [Cb;*[; all 會把上面的顏色全部打開
+
+[Cb;*[; theme_trans=0 → 設定配色之間自動切換的時間 (秒)
+
+<a href="https://pi314.github.io/matrix6/?chars=幹&themes=all&theme_trans=5" target="_blank">例如這樣</a>
+
+紅色有點嚇人
