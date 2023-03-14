@@ -22,7 +22,6 @@ var ARTICLE_FILES_LIST = [
 "universe1.4.txt",
 "drop_snake6.txt",
 "petridish3.txt",
-"table-maker.txt",
 "forward.txt",
 "matrix5.txt",
 "matrix6.txt",
